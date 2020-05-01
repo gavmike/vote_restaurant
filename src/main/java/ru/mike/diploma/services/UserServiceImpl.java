@@ -13,6 +13,7 @@ import ru.mike.diploma.persistence.repository.UserRepository;
 import java.util.Optional;
 
 @Service("userService")
+
 @Transactional
 public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired

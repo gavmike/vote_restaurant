@@ -10,6 +10,7 @@ public interface MenuService {
 
     List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID);
 
+
     List<Menu> getAllMenu(int restID);
 
     Menu getMenu(int menuID, int restID);

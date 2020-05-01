@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ru.mike.diploma.service.AbstractServiceTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.803 s <<< FAILURE! - in ru.mike.diploma.service.AbstractServiceTest
-initializationError(ru.mike.diploma.service.AbstractServiceTest)  Time elapsed: 0.003 s  <<< ERROR!
-java.lang.Exception: No runnable methods
-

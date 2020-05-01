@@ -28,7 +28,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
         String url = null;
 
         try {
-            InputStream inputStream = new FileInputStream("src/main/resources/persistence.properties");
+            InputStream inputStream = new FileInputStream("src/main/resources/mysql.properties");
             Properties properties = new Properties();
             properties.load(inputStream);
             url = properties.getProperty("url");

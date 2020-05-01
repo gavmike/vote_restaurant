@@ -24,9 +24,13 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
                 , new Object[]{restID, localDate}, new BeanPropertyRowMapper<>(Menu.class));
     }
 
+
+
     @Override
     public Menu getMenu(int menuID) {
-        return null;
+
+        return (Menu) jdbcTemplate.query("select  * from menu where id =?",new Object[] {menuID},new MenuMapper()).stream().findAny().orElse(null);
+
     }
 
     @Override
