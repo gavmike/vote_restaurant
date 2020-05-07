@@ -1,17 +1,14 @@
-package ru.mike.diploma.service;
+package ru.mike.diploma.services;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.mike.diploma.model.Menu;
 
-import ru.mike.diploma.services.MenuService;
-import ru.mike.diploma.services.MenuServiceImpl;
-
 import java.time.LocalDate;
 import java.util.List;
 
-import static ru.mike.diploma.testData.RestaurantTestData.*;
+import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
 
 public class MenuServiceTest extends AbstractServiceTest {
     @Autowired
@@ -19,34 +16,34 @@ public class MenuServiceTest extends AbstractServiceTest {
 
     @Test
     public void getById() {
-        Menu menu = menuService.getMenu(1, 1);
+        Menu menu = menuService.get(1, 1);
         Assert.assertEquals(MENU1_OF_REST_1, menu);
     }
 
     @Test
     public void addMenu() {
         Menu newMenu = getNewMenu();
-        menuService.addMenu(newMenu, 2);
-        Assert.assertEquals(newMenu, menuService.getMenu(6, 2));
+        menuService.add(newMenu, 2);
+        Assert.assertEquals(newMenu, menuService.get(6, 2));
     }
 
     @Test
     public void deleteMenu() {
-        LocalDate localDate = menuService.getMenu(5, 1).getLocalDate();
-        menuService.deleteMenu(5, 1);
-        Assert.assertEquals(menuService.getAllMenu(1), List.of(MENU1_OF_REST_1, MENU2_OF_REST_1));
+        LocalDate localDate = menuService.get(5, 1).getLocalDate();
+        menuService.delete(5, 1);
+        Assert.assertEquals(menuService.getAllByRestaurantId(1), List.of(MENU1_OF_REST_1, MENU2_OF_REST_1));
     }
 
     @Test
     public void getAllMenuDateandRestID() {
 
-        List<Menu> menuListDB = menuService.getAllMenuDateandRestID(DATE_1, REST1_ID);
+        List<Menu> menuListDB = menuService.getAllByDateAndRestaurantId(DATE_1, REST1_ID);
         Assert.assertEquals(List.of(MENU1_OF_REST_1, MENU2_OF_REST_1), menuListDB);
     }
 
     @Test
     public void getAllMenu() {
-        List<Menu> menuListDB = menuService.getAllMenu(1);
+        List<Menu> menuListDB = menuService.getAllByRestaurantId(1);
         Assert.assertEquals(List.of(MENU1_OF_REST_1, MENU2_OF_REST_1, MENU3_OF_REST_1), menuListDB);
     }
 }

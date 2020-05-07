@@ -10,12 +10,13 @@ import java.util.List;
 @Repository
 
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
-    List<Menu> getMenuByLocalDateAndRestaurantId(LocalDate localDate, int restID);
 
-    List<Menu> getAllMenuByRestaurantId(int restID);
+    List<Menu> getMenuByLocalDateAndRestaurantId(LocalDate localDate, int restId);
 
-    Menu getMenuByIdAndRestaurantId(int menuID, int restID);
+    List<Menu> getAllMenuByRestaurantId(int restId);
 
-    void deleteByIdAndAndRestaurantId(int menuID, int restID);
+    Menu getMenuByIdAndRestaurantId(int menuId, int restId);
+
+    int deleteByIdAndRestaurantId(int menuId, int restId);
 
 }

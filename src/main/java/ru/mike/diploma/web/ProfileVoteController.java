@@ -37,14 +37,14 @@ public class ProfileVoteController {
     @GetMapping(value = GET_URL, produces = MediaType.APPLICATION_JSON_VALUE)
     public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
         log.info("user {} ", authorizedUser.getUserTo());
-        return voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(), LocalDate.now());
+        return voteService.getAllByUserIdAndDate(authorizedUser.getId(), LocalDate.now());
     }
 
     @PostMapping(value = POST_URL, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Vote> createOrUpdate(@PathVariable("restaurantId") int restaurantId, @AuthenticationPrincipal AuthorizedUser authorizedUser) {
-        Vote vote = voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(), LocalDate.now());
+        Vote vote = voteService.getAllByUserIdAndDate(authorizedUser.getId(), LocalDate.now());
         if (vote == null) {
-            Vote voteNew = new Vote(LocalDate.now(), restaurantService.getRestaurantbyID(restaurantId).get(), authorizedUser.getUserTo());
+            Vote voteNew = new Vote(LocalDate.now(), restaurantService.get(restaurantId), authorizedUser.getUserTo());
             voteService.save(voteNew);
             URI uriOfNew = ServletUriComponentsBuilder.fromCurrentRequest()
                     .path("/{restaurantId}")

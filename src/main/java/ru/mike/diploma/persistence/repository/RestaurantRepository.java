@@ -8,9 +8,18 @@ import ru.mike.diploma.model.Vote;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Integer> {
     List<Restaurant> findAll();
+
+
+
+
+
+
+
+
 
 
 }

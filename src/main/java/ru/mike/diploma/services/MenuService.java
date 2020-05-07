@@ -1,19 +1,20 @@
 package ru.mike.diploma.services;
 
+import javassist.NotFoundException;
 import ru.mike.diploma.model.Menu;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public interface MenuService {
-    Menu addMenu(Menu menu, int rest_id);
+    Menu add(Menu menu, int restId);
 
-    List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID);
+    List<Menu> getAllByDateAndRestaurantId(LocalDate localDate, int restId);
 
+    List<Menu> getAllByRestaurantId(int restId);
 
-    List<Menu> getAllMenu(int restID);
+    Menu get(int menuId, int restId);
 
-    Menu getMenu(int menuID, int restID);
+    void delete(int menuId, int restId) ;
 
-    void deleteMenu(int menuID, int restID);
 }

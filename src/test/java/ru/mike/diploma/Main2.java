@@ -1,3 +1,4 @@
+/*
 package ru.mike.diploma;
 
 import org.apache.commons.io.FileUtils;
@@ -46,9 +47,11 @@ public class Main2 {
             while (rs.next()) {
                 String name = rs.getString("name");
                 System.out.println(name);
-                /*Integer id = rs.getInt("id");
+                */
+/*Integer id = rs.getInt("id");
                 Integer price = rs.getInt("price");
-                Date date = rs.getDate("datemenu");*/
+                Date date = rs.getDate("datemenu");*//*
+
 
 
 
@@ -64,7 +67,8 @@ public class Main2 {
 
 
 
-	   /*     List<Contact> contacts = new ArrayList<>();
+	   */
+/*     List<Contact> contacts = new ArrayList<>();
 	        while(rs.next()){
 	        	contacts.add(new Contact(
 	        			rs.getString(1),
@@ -76,7 +80,8 @@ public class Main2 {
 
 	        for(Contact c : contacts) {
 	        	System.out.println(c);
-	        }*/
+	        }*//*
+
 
         } catch (SQLException e) {
             throw e;
@@ -93,3 +98,4 @@ public class Main2 {
 
 
 }
+*/

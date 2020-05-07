@@ -23,7 +23,7 @@ public class AdminUserController {
     @GetMapping(value = "/get/{Id}")
     public User getUser(@PathVariable("Id") int Id) {
         LOG.info("id user ={}", Id);
-        return userService.getbyID(Id).get();
+        return userService.get(Id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

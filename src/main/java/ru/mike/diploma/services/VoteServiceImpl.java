@@ -3,15 +3,16 @@ package ru.mike.diploma.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 import ru.mike.diploma.model.Vote;
 import ru.mike.diploma.persistence.repository.MenuRepository;
-import ru.mike.diploma.persistence.repository.RestaurantRepository;
-import ru.mike.diploma.persistence.repository.UserRepository;
 import ru.mike.diploma.persistence.repository.VoteRepository;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
+
+
+import static ru.mike.diploma.util.ValidationUtil.checkNotFoundWithId;
 
 @Service
 @Transactional
@@ -26,22 +27,22 @@ public class VoteServiceImpl implements VoteService {
     VoteRepository voteRepository;
 
     @Override
-    public Optional<Vote> getById(int voteID) {
-        return voteRepository.getById(voteID);
+    public Vote get(int id) {
+        return checkNotFoundWithId(voteRepository.getById(id).orElse(null),id);
     }
 
     @Override
-    public List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate) {
+    public List<Vote> getAllByRestaurantIdAndDate(int restId, LocalDate localDate) {
         return voteRepository.getAllByRestaurantIdAndLocalDate(restId, localDate);
     }
 
     @Override
-    public Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate) {
-        return voteRepository.getAllByUserIdAndLocalDate(userID, localDate);
+    public Vote getAllByUserIdAndDate(int userId, LocalDate localDate) {
+        return voteRepository.getAllByUserIdAndLocalDate(userId, localDate);
     }
 
     @Override
-    public List<Vote> getAllByLocalDate(LocalDate localDate) {
+    public List<Vote> getAllByDate(LocalDate localDate) {
 
         return voteRepository.getAllByLocalDate(localDate);
     }
@@ -52,14 +53,16 @@ public class VoteServiceImpl implements VoteService {
     }
 
     @Override
-    public void delete(int voteId) {
-        voteRepository.deleteById(voteId);
+    public void delete(int id) {
+        get(id);
+        voteRepository.deleteById(id);
     }
 
     @Override
     public Vote saveOrUpdate(Vote vote, int restId, int userId) {
-        vote.setRestaurant(restaurantRepository.getRestaurantbyID(restId).get());
-        vote.setUser(userRepository.getbyID(userId).get());
+        Assert.notNull(vote,"vote should not be null");
+        vote.setRestaurant(restaurantRepository.get(restId));
+        vote.setUser(userRepository.get(userId));
         return voteRepository.save(vote);
     }
 

@@ -30,12 +30,12 @@ public class AdminRestaurantController {
 
     @GetMapping(value = "/get/{id}")
     public Restaurant getRestId(@PathVariable("id") int id) {
-        return restaurantService.getRestaurantbyID(id).get();
+        return restaurantService.get(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Restaurant> add(@RequestBody Restaurant restaurant) {
-        Restaurant restaurantNew = restaurantService.addRest(restaurant);
+        Restaurant restaurantNew = restaurantService.add(restaurant);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(restaurantNew.getId()).toUri();
@@ -45,7 +45,7 @@ public class AdminRestaurantController {
     @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@PathVariable("id") int id, @RequestBody Restaurant restaurant) {
 
-        restaurantService.updateRest(restaurant);
+        restaurantService.update(restaurant);
     }
 
     @DeleteMapping(value = "/delete/{id}")
@@ -56,7 +56,7 @@ public class AdminRestaurantController {
     @GetMapping(value = "/getAllTodayMenu", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Restaurant> getToday() {
         LOG.info("getAllTodayMenu");
-        List<Restaurant> restWithTodayMenu = restaurantService.getAllwithTodayMenu(LocalDate.now());
+        List<Restaurant> restWithTodayMenu = restaurantService.getAllWithTodayMenu(LocalDate.now());
         LOG.info("size={}", restWithTodayMenu.size());
         return restWithTodayMenu;
 

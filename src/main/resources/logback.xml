@@ -1,0 +1,32 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logdiploma.log</file>
+        <append>true</append>
+        <!-- set immediateFlush to false for much higher logging throughput -->
+        <immediateFlush>true</immediateFlush>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.data.jpa" level="info" additivity="false"> <appender-ref ref="console"/></logger>
+    <logger name="org.springframework" level="info"/>
+    <!-- <logger name="ru.mike.diploma" level="debug" additivity="false">   <appender-ref ref="console"/> </logger>-->
+    <logger name="ru.mike.diploma.web" level="info"/>
+    <logger name="ru.mike.diploma" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

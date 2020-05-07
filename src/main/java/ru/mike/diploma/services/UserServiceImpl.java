@@ -6,11 +6,16 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 import ru.mike.diploma.AuthorizedUser;
 import ru.mike.diploma.model.User;
 import ru.mike.diploma.persistence.repository.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
+
+import static ru.mike.diploma.util.ValidationUtil.checkNotFound;
+import static ru.mike.diploma.util.ValidationUtil.checkNotFoundWithId;
 
 @Service("userService")
 
@@ -19,20 +24,29 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    @Override
     public User add(User user) {
+        Assert.notNull(user,"User should not be null");
         return userRepository.save(user);
     }
-
-    public void delete(int userID) {
-        userRepository.deleteById(userID);
+    @Override
+    public void delete(int id) {
+       get(id);
+        userRepository.deleteById(id);
     }
-
-    public Optional<User> getbyID(int userID) {
-        return userRepository.findById(userID);
+    @Override
+    public User get(int id) {
+        return checkNotFoundWithId( userRepository.findById(id).orElse(null),id);
     }
-
+    @Override
     public User getByEmail(String email) {
-        return userRepository.getByEmail(email);
+        Assert.notNull(email, "email must not be null");
+        return checkNotFound(userRepository.getByEmail(email),"email"+email);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userRepository.findAll();
     }
 
     @Override

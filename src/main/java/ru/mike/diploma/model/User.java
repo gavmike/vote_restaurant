@@ -11,13 +11,10 @@ public class User extends AbstractNamedEntity {
     @Enumerated(EnumType.STRING)
     private Role role;
     private String password;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-
     protected List<Vote> votes;
 
     public User() {
-
     }
 
     public User(String email, Role role, String password) {

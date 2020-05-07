@@ -3,6 +3,7 @@ package ru.mike.diploma;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.services.MenuService;
+import ru.mike.diploma.services.RestaurantService;
 import ru.mike.diploma.services.UserService;
 
 
@@ -22,15 +23,20 @@ public class Main {
 
         try (GenericXmlApplicationContext appCtx = new GenericXmlApplicationContext()) {
             appCtx.getEnvironment().setActiveProfiles("hsqldb", "datajpa");
-            appCtx.load("spring-web.xml");
+            appCtx.load("spring/spring-web.xml");
             appCtx.refresh();
-            System.out.println("Bean definition names: " + Arrays.toString(appCtx.getBeanDefinitionNames()));
+           // System.out.println("Bean definition names: " + Arrays.toString(appCtx.getBeanDefinitionNames()));
            MenuService menuService = (MenuService) appCtx.getBean("menuServiceImpl");
-            UserService userService = (UserService)appCtx.getBean("userService");
-            System.out.println( userService.getbyID(1));
-           menuService.addMenu(new Menu("lunch223",333,LocalDate.now()),1);
+            RestaurantService restaurantService =(RestaurantService) appCtx.getBean("restaurantServiceImpl");
+           restaurantService.delete(111);
+            //System.out.println("main "+restaurantService.get(1));
+           // UserService userService = (UserService)appCtx.getBean("userService");
+           // System.out.println( userService.getbyID(1));
+          // menuService.addMenu(new Menu("lunch223",333,LocalDate.now()),1);
+            //menuService.addMenu(null,1);
+           //menuService.delete(2,1);
 
-         System.out.println(menuService.getAllMenu(1));
+        // System.out.println(menuService.getAllMenu(1));
            // MenuJPA menuJPA = (MenuJPA) appCtx.getBean(MenuJPAJDBCTemplateImpl.class);
            // System.out.println( menuJPA.getMenu(1));
 

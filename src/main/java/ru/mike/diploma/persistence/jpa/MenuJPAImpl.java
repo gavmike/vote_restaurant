@@ -20,24 +20,24 @@ public class MenuJPAImpl implements MenuJPA {
     private EntityManager entityManager;
 
     @Override
-    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) throws SQLException {
-        TypedQuery<Menu> query = entityManager.createQuery("select m from Menu m where m.localDate=:localDate and m.restaurant.id=:restID", Menu.class);
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException {
+        TypedQuery<Menu> query = entityManager.createQuery("select m from Menu m where m.localDate=:localDate and m.restaurant.id=:restId", Menu.class);
         query.setParameter("localDate", localDate);
-        query.setParameter("restID", restID);
+        query.setParameter("restId", restId);
         return query.getResultList();
     }
 
     @Override
-    public Menu getMenu(int menuID) {
-        TypedQuery<Menu> query = entityManager.createQuery("select m from Menu m where m.id=:menuID", Menu.class);
-        query.setParameter("menuID", menuID);
+    public Menu getMenu(int menuId) {
+        TypedQuery<Menu> query = entityManager.createQuery("select m from Menu m where m.id=:menuId", Menu.class);
+        query.setParameter("menuId", menuId);
         return query.getSingleResult();
     }
 
     @Override
     @Transactional
-    public void deleteMenu(int menuID) throws SQLException {
-        entityManager.remove(getMenu(menuID));
+    public void deleteMenu(int menuId) throws SQLException {
+        entityManager.remove(getMenu(menuId));
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MenuJPAImpl implements MenuJPA {
 
     @Override
     @Transactional
-    public void updateMenu(Menu menu, int restID) throws SQLException {
+    public void updateMenu(Menu menu, int restId) throws SQLException {
         Menu newmenu = entityManager.merge(menu);
         newmenu.setPrice(menu.getPrice());
         newmenu.setRestaurant(menu.getRestaurant());

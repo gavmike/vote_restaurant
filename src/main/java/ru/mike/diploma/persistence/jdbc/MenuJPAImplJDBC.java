@@ -48,13 +48,13 @@ public class MenuJPAImplJDBC implements MenuJPA {
     }
 
     @Override
-    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) throws SQLException {
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException {
 
         List<Menu> menuList = new ArrayList<>();
         PreparedStatement preparedStatement = conn.prepareStatement("select * from  menu where id_rest = ? and datemenu = ?");
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
         preparedStatement.setDate(2, Date.valueOf(localDate));
-        preparedStatement.setInt(1, restID);
+        preparedStatement.setInt(1, restId);
 
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
@@ -70,15 +70,15 @@ public class MenuJPAImplJDBC implements MenuJPA {
     }
 
     @Override
-    public Menu getMenu(int menuID) {
+    public Menu getMenu(int menuId) {
         return null;
     }
 
     @Override
-    public void deleteMenu(int menuID) throws SQLException {
+    public void deleteMenu(int menuId) throws SQLException {
         PreparedStatement prepSt = conn.prepareStatement("delete from menu where id=?");
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
-        prepSt.setInt(1, menuID);
+        prepSt.setInt(1, menuId);
         prepSt.execute();
     }
 
@@ -115,12 +115,12 @@ public class MenuJPAImplJDBC implements MenuJPA {
     }
 
     @Override
-    public void updateMenu(Menu menu, int restID) throws SQLException {
+    public void updateMenu(Menu menu, int restId) throws SQLException {
         PreparedStatement preparedStatement = conn.prepareStatement("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ");
         preparedStatement.setString(1, menu.getName());
         preparedStatement.setLong(2, menu.getPrice());
         preparedStatement.setDate(3, Date.valueOf(menu.getLocalDate()));
-        preparedStatement.setInt(4, restID);
+        preparedStatement.setInt(4, restId);
         preparedStatement.setInt(5, menu.getId());
         preparedStatement.execute();
     }

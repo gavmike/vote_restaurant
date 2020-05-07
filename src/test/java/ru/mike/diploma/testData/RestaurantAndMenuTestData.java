@@ -8,11 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class RestaurantTestData {
+public class RestaurantAndMenuTestData {
     public static final int REST1_ID = 1;
     public static final int REST2_ID = 2;
+    public static final int REST3_ID = 3;
     public static final Restaurant MACD = new Restaurant(REST1_ID, "MacDonalds");
     public static final Restaurant KFC = new Restaurant(REST2_ID, "KFC");
+    public static final Restaurant DoDo = new Restaurant(REST3_ID, "DoDo");
     public static final int VOTES_1 = 3;
     public static final int VOTES_2 = 1;
     public static final LocalDate DATE_1 = LocalDate.of(2019, 8, 16);

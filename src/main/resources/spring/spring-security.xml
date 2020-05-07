@@ -5,13 +5,13 @@
 	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http pattern="/resources/**" security="none"/>
-    <http pattern="/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
+    <http pattern="/ru/mike/diploma" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
 <http-basic/>
    <intercept-url pattern="api/admin/**" access ="hasRole('ROLE_ADMIN')"/>
     <intercept-url pattern="api/profile/**" access ="hasRole('ROLE_USER')"/>
     <intercept-url pattern="api/profile/register" access ="isAnonymous()"/>
     <intercept-url pattern="api/profile/today-menu" access ="permitAll()"/>
-    <intercept-url pattern="/**" access ="isAuthenticated()"/>
+    <intercept-url pattern="/ru/mike/diploma" access ="isAuthenticated()"/>
     <csrf disabled="true"/>
     </http>
 

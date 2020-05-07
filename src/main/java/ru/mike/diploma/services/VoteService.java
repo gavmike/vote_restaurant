@@ -8,17 +8,17 @@ import java.util.Optional;
 
 public interface VoteService {
 
-    Optional<Vote> getById(int voteID);
+  Vote get(int id);
 
-    List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate);
+    List<Vote> getAllByRestaurantIdAndDate(int restId, LocalDate localDate);
 
-    Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate);
+    Vote getAllByUserIdAndDate(int userId, LocalDate localDate);
 
-    List<Vote> getAllByLocalDate(LocalDate localDate);
+    List<Vote> getAllByDate(LocalDate localDate);
 
     Vote save(Vote vote);
 
-    void delete(int voteId);
+    void delete(int id);
 
     Vote saveOrUpdate(Vote vote, int restId, int userId);
 }

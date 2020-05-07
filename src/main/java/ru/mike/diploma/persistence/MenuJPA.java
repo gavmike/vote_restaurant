@@ -7,15 +7,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface MenuJPA {
-    List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) throws SQLException;
+    List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException;
 
-    Menu getMenu(int menuID);
+    Menu getMenu(int menuId);
 
-    void deleteMenu(int menuID) throws SQLException;
+    void deleteMenu(int menuId) throws SQLException;
 
     void addMenu(Menu menu) throws Exception;
 
     List<Menu> getAllMenuDate(LocalDate localDate) throws SQLException;
 
-    void updateMenu(Menu menu, int restID) throws SQLException;
+    void updateMenu(Menu menu, int restId) throws SQLException;
 }

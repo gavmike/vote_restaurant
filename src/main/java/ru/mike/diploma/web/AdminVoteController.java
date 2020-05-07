@@ -19,7 +19,7 @@ public class AdminVoteController {
 
     @GetMapping(value = "/today/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Vote> getAllToday() {
-        return voteService.getAllByLocalDate(LocalDate.now());
+        return voteService.getAllByDate(LocalDate.now());
     }
 
     @DeleteMapping(value = "/{id}")
@@ -30,7 +30,7 @@ public class AdminVoteController {
 
     @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Vote getVoteId(@PathVariable("id") int id) {
-        return voteService.getById(id).get();
+        return voteService.get(id);
     }
 
 }

@@ -8,17 +8,17 @@ import java.util.Optional;
 
 public interface RestaurantService {
 
-    Optional<Restaurant> getRestaurantbyID(int restID);
+   Restaurant get(int id);
 
-    void delete(int restID);
+    void delete(int id);
 
-    Restaurant addRest(Restaurant restaurant);
+    Restaurant add(Restaurant restaurant);
 
-    void updateRest(Restaurant restaurant);
+    void update(Restaurant restaurant);
 
-    List<Restaurant> getAllRestaurant();
+    List<Restaurant> getAll();
 
-    Restaurant getRestaurantwithTodayMenu(int restID);
+    Restaurant getWithTodayMenu(int restId);
 
-    List<Restaurant> getAllwithTodayMenu(LocalDate localDate);
+    List<Restaurant> getAllWithTodayMenu(LocalDate localDate);
 }

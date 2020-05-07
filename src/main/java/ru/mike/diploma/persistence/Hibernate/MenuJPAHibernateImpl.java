@@ -25,9 +25,9 @@ public class MenuJPAHibernateImpl implements MenuJPA {
     }
 
     @Override
-    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) {
-        Query<Menu> query = currentSession().createQuery("from Menu where localDate =:localDate and id_rest =:restID", Menu.class);
-        query.setParameter("restID", restID);
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) {
+        Query<Menu> query = currentSession().createQuery("from Menu where localDate =:localDate and id_rest =:restId", Menu.class);
+        query.setParameter("restId", restId);
         query.setParameter("localDate", localDate);
         LOG.info("query={}", query.getResultList());
 
@@ -36,15 +36,15 @@ public class MenuJPAHibernateImpl implements MenuJPA {
 
     @Override
 
-    public Menu getMenu(int menuID) {
-        Query<Menu> query = currentSession().createQuery("from Menu where id =:menuID", Menu.class);
-        query.setParameter("menuID", menuID);
+    public Menu getMenu(int menuId) {
+        Query<Menu> query = currentSession().createQuery("from Menu where id =:menuId", Menu.class);
+        query.setParameter("menuId", menuId);
         return query.getSingleResult();
     }
 
     @Override
-    public void deleteMenu(int menuID) {
-        Menu menu = getMenu(menuID);
+    public void deleteMenu(int menuId) {
+        Menu menu = getMenu(menuId);
         currentSession().delete(menu);
     }
 
@@ -61,8 +61,8 @@ public class MenuJPAHibernateImpl implements MenuJPA {
     }
 
     @Override
-    public void updateMenu(Menu menu, int restID) {
-        menu.getRestaurant().setId(restID);
+    public void updateMenu(Menu menu, int restId) {
+        menu.getRestaurant().setId(restId);
         currentSession().update(menu);
         LOG.info("update={}", menu);
         LOG.info("restid={}", menu.getRestaurant().getId());

@@ -6,112 +6,111 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a0acef-73d7-4ddd-bc55-859cd6c373d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hsqldb.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/init_HSQLDB.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/old/initDB_hsql_old.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/old/populate_HSQLDB_old.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/populateHSQLDB.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprin-db.xml" afterDir="false" />
+    <list default="true" id="e5a0acef-73d7-4ddd-bc55-859cd6c373d4" name="Default Changelist" comment="clear code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/util/ValidationUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/util/exception/IllegalRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/util/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/services/RestaurantServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4474e341-59ce-47f3-ad15-ff3e0f5e7065.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mydatabase.properties" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mydatabase.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mydatabase.script" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mydatabase.script" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logdiploma.log" beforeDir="false" afterPath="$PROJECT_DIR$/logdiploma.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/AbstractBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/AbstractBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/MenuJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/MenuJPA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jpa/MenuJPAImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/jpa/MenuJPAImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/MenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/RestaurantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/RestaurantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/VoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/VoteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/MenuService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/init_mysqlDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/persistence-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/persistence.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysql.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/populate_mysqlDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/springconf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/VoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/VoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/VoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/VoteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminVoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminVoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/ProfileVoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/ProfileVoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hsqldb.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/hsqldb.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/init_HSQLDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init_HSQLDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/init_mysqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init_mysqlDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mysql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/mysql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/populateHSQLDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/populateHSQLDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/populate_mysqlDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/populate_mysqlDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sprin-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/sprin-db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/spring-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/AbstractServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/AbstractServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/initDB.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/persistence-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/persistence.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/populateDB.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/AuthorizedUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/AuthorizedUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/Main2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/AbstractServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/services/AbstractServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/MenuServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/services/MenuServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/RestaurantServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/testData/RestaurantTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/testData/RestaurantTestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/diploma.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/AbstractBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/AbstractBaseEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Restaurant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Vote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Vote.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jpa/MenuJPAImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/jpa/MenuJPAImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/MenuRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/MenuRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/MenuService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/VoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/VoteService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/VoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/VoteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/util/TimeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/util/TimeUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminRestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminRestaurantController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminVoteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/ProfileVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/ProfileVoteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/json/JacksonObjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/json/JacksonObjectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springconf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/initDB.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/persistence-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/persistence.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/populateDB.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/AuthorizedUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/AuthorizedUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Restaurant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Vote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Vote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/META-INF/diploma.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/AbstractBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/AbstractBaseEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jdbc/MenuJPAImplJDBC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jdbcTemplate/MenuJPAJDBCTemplateImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jpa/MenuJPAImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/jpa/MenuJPAImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/repository/MenuRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/repository/MenuRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/VoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/VoteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/util/TimeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/util/TimeUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminRestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminRestaurantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminVoteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/ProfileVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/ProfileVoteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/json/JacksonObjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/json/JacksonObjectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/springconf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/aspectjrt-1.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/byte-buddy-1.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/hibernate-core-5.4.9.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/spring-data-commons-2.2.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/spring-data-jpa-2.2.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/spring-tx-5.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-security.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/spring-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.mike.diploma.service.AbstractServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.mike.diploma.service.MenuServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.mike.diploma.service.RestaurantServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.mike.diploma.service.AbstractServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.mike.diploma.service.MenuServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.mike.diploma.service.RestaurantServiceTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/AbstractServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/AbstractServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/MenuServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/MenuServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/RestaurantServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/RestaurantServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/AbstractServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/MenuServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/service/RestaurantServiceTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/testData/RestaurantTestData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/mike/diploma/testData/RestaurantTestData.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,21 +130,37 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:hsqldb:mem:mydatabase" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:hsqldb:mem:mydatabase" type="feb32156:DbDataSourceImpl" />
+        <item name="PUBLIC: database" type="5208c322:HsqlImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:hsqldb:mem:mydatabase" type="feb32156:DbDataSourceImpl" />
+        <item name="PUBLIC: database" type="5208c322:HsqlImplModel$Database" />
+        <item name="PUBLIC: schema" type="d266ad14:HsqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ExecutionTargetDialog" filtered="false">
     <checked>
-      <node key="1d2ec2b1-d9c2-4deb-ad92-48cb8f508f89" />
+      <node key="751f4a13-3684-420a-9b19-54431d83c4d1" />
     </checked>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -184,28 +199,34 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/topjava" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.mike.diploma.services" />
       <recent name="ru.mike.diploma.repository.jdbc" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.mike.diploma.services" />
       <recent name="ru.mike.diploma" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\intership\diploma\src\main\resources" />
+      <recent name="C:\intership\diploma\src\main\resources\db" />
+      <recent name="C:\intership\diploma\src\main\resources\spring" />
       <recent name="C:\intership\diploma\src\main\resources\log" />
       <recent name="C:\intership\diploma\src\main\resources\old" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\intership\diploma\src\test\resources" />
       <recent name="C:\intership\diploma\src\main\resources\topjava" />
       <recent name="C:\intership\diploma\src\main\java\ru\mike\diploma\util" />
     </key>
@@ -235,78 +256,88 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.22">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.Main" />
+  <component name="RunManager" selected="JUnit.MenuServiceTest and 3 more">
+    <configuration name="MenuServiceTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="diploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.mike.diploma.*" />
+          <option name="PATTERN" value="ru.mike.diploma.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.mike.diploma.services" />
+      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.services.AbstractServiceTest" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="ru.mike.diploma.services.MenuServiceTest" />
+        <pattern testClass="ru.mike.diploma.services.RestaurantServiceTest" />
+        <pattern testClass="ru.mike.diploma.services.UserServiceTest" />
+        <pattern testClass="ru.mike.diploma.services.VoteServiceTest" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteServiceTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="diploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.mike.diploma.service.*" />
+          <option name="PATTERN" value="ru.mike.diploma.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.mike.diploma.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.service.MenuServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuServiceTest.addMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="diploma" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.mike.diploma.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.mike.diploma.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.service.MenuServiceTest" />
-      <option name="METHOD_NAME" value="addMenu" />
+      <option name="PACKAGE_NAME" value="ru.mike.diploma.services" />
+      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.services.VoteServiceTest" />
+      <option name="METHOD_NAME" value="delete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuServiceTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteServiceTest.getAllByDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="diploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.mike.diploma.service.*" />
+          <option name="PATTERN" value="ru.mike.diploma.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.mike.diploma.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.service.MenuServiceTest" />
-      <option name="METHOD_NAME" value="getById" />
+      <option name="PACKAGE_NAME" value="ru.mike.diploma.services" />
+      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.services.VoteServiceTest" />
+      <option name="METHOD_NAME" value="getAllByDate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestaurantServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteServiceTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="diploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.mike.diploma.service.*" />
+          <option name="PATTERN" value="ru.mike.diploma.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.mike.diploma.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.service.RestaurantServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="ru.mike.diploma.services" />
+      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.services.VoteServiceTest" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VoteServiceTest.saveOrUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="diploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.mike.diploma.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.mike.diploma.services" />
+      <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.services.VoteServiceTest" />
+      <option name="METHOD_NAME" value="saveOrUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -385,20 +416,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.MenuServiceTest.getById" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.22" />
-      <item itemvalue="JUnit.RestaurantServiceTest" />
-      <item itemvalue="JUnit.MenuServiceTest" />
-      <item itemvalue="JUnit.MenuServiceTest.addMenu" />
+      <item itemvalue="JUnit.VoteServiceTest.getAllByDate" />
+      <item itemvalue="JUnit.VoteServiceTest.save" />
+      <item itemvalue="JUnit.VoteServiceTest.delete" />
+      <item itemvalue="JUnit.VoteServiceTest.saveOrUpdate" />
+      <item itemvalue="JUnit.MenuServiceTest and 3 more" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestaurantServiceTest" />
-        <item itemvalue="JUnit.MenuServiceTest" />
-        <item itemvalue="JUnit.MenuServiceTest.addMenu" />
-        <item itemvalue="JUnit.MenuServiceTest.getById" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MenuServiceTest and 3 more" />
+        <item itemvalue="JUnit.VoteServiceTest.saveOrUpdate" />
+        <item itemvalue="JUnit.VoteServiceTest.delete" />
+        <item itemvalue="JUnit.VoteServiceTest.save" />
+        <item itemvalue="JUnit.VoteServiceTest.getAllByDate" />
       </list>
     </recent_temporary>
   </component>
@@ -409,12 +440,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@362cceaa" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4416b5ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@362cceaa" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5f6550af" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4416b5ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@793f734a" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -441,6 +472,7 @@
       <workItem from="1584675501664" duration="800000" />
       <workItem from="1587830952073" duration="28772000" />
       <workItem from="1587980868009" duration="81421000" />
+      <workItem from="1588380963481" duration="72162000" />
     </task>
     <task id="LOCAL-00001" summary="clear code">
       <created>1583779088248</created>
@@ -476,9 +508,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/MenuServiceTest.java</url>
-          <line>20</line>
-          <properties class="ru.mike.diploma.service.MenuServiceTest" method="getById">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/mike/diploma/services/VoteServiceTest.java</url>
+          <line>56</line>
+          <properties class="ru.mike.diploma.services.VoteServiceTest" method="saveOrUpdate">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />

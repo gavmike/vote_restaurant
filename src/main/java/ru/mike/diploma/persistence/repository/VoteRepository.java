@@ -9,11 +9,11 @@ import java.util.Optional;
 
 public interface VoteRepository extends JpaRepository<Vote, Integer> {
 
-    Optional<Vote> getById(int voteID);
+    Optional<Vote> getById(int voteId);
 
     List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate);
 
-    Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate);
+    Vote getAllByUserIdAndLocalDate(int userId, LocalDate localDate);
 
     List<Vote> getAllByLocalDate(LocalDate localDate);
 }

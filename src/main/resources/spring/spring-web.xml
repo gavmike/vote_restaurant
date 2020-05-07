@@ -4,10 +4,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="sprin-db.xml"/>
-
+    <import resource="../db/sprin-db.xml"/>
+  <import resource="spring-security.xml"/>
     <context:component-scan base-package="ru.mike.diploma.model"/>
+
+    <context:component-scan base-package="ru.mike.diploma.web"/>
     <context:component-scan base-package="ru.mike.diploma.services"/>
-    <context:component-scan base-package="ru.mike.diploma.persistence.repository"/>
+
+
 
 </beans>

@@ -2,16 +2,19 @@ package ru.mike.diploma.services;
 
 import ru.mike.diploma.model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
 
     User add(User user);
 
-    void delete(int userID);
+    void delete(int id);
 
-    Optional<User> getbyID(int userID);
+    User get(int id);
 
     User getByEmail(String email);
+
+    List<User> getAll();
 
 }

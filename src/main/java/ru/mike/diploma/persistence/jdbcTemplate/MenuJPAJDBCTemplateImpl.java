@@ -18,24 +18,24 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) throws SQLException {
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException {
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
         return jdbcTemplate.query("select * from  menu where id_rest = ? and datemenu = ? "
-                , new Object[]{restID, localDate}, new BeanPropertyRowMapper<>(Menu.class));
+                , new Object[]{restId, localDate}, new BeanPropertyRowMapper<>(Menu.class));
     }
 
 
 
     @Override
-    public Menu getMenu(int menuID) {
+    public Menu getMenu(int menuId) {
 
-        return (Menu) jdbcTemplate.query("select  * from menu where id =?",new Object[] {menuID},new MenuMapper()).stream().findAny().orElse(null);
+        return (Menu) jdbcTemplate.query("select  * from menu where id =?",new Object[] {menuId},new MenuMapper()).stream().findAny().orElse(null);
 
     }
 
     @Override
-    public void deleteMenu(int menuID) {
-        jdbcTemplate.update("delete from menu where id=?", menuID);
+    public void deleteMenu(int menuId) {
+        jdbcTemplate.update("delete from menu where id=?", menuId);
 
     }
 
@@ -54,9 +54,9 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
     }
 
     @Override
-    public void updateMenu(Menu menu, int restID) {
+    public void updateMenu(Menu menu, int restId) {
         jdbcTemplate.update("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ", menu.getName(), menu.getPrice()
-                , menu.getLocalDate(), menu.getId(), restID);
+                , menu.getLocalDate(), menu.getId(), restId);
 
     }
 }

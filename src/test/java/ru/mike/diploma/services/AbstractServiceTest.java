@@ -1,4 +1,4 @@
-package ru.mike.diploma.service;
+package ru.mike.diploma.services;
 
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 @ContextConfiguration("classpath:spring-test.xml")
 @RunWith(SpringRunner.class)
 @ActiveProfiles({"hsqldb","datajpa"})
-@Sql(scripts = "classpath:populateHSQLDB.sql",  config = @SqlConfig(encoding = "UTF-8"))
-public class AbstractServiceTest {
+@Sql(scripts = "classpath:db/populateHSQLDB.sql",  config = @SqlConfig(encoding = "UTF-8"))
+public abstract class AbstractServiceTest {
     protected static final Logger log = getLogger("result");
 }

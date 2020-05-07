@@ -6,7 +6,6 @@ import java.util.Objects;
 @MappedSuperclass
 @Access(AccessType.FIELD)
 public abstract class AbstractBaseEntity {
-    public static final int START_SEQ = 1000;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;

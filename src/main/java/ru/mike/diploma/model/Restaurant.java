@@ -66,10 +66,8 @@ public class Restaurant extends AbstractNamedEntity {
 
     @Override
     public String toString() {
-        return "Restaurant{" + menuList + votes +
-
-
-                ", name='" + name + '\'' +
+        return "Restaurant{" +
+                " name='" + name + '\'' +
                 ", id=" + id +
                 '}';
     }
