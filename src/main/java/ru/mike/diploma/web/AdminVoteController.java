@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = AdminVoteController.URL)
 public class AdminVoteController {
-    static final String URL = "/admin/vote";
+    static final String URL = "/rest/admin/vote";
     @Autowired
     VoteService voteService;
 
@@ -28,7 +28,7 @@ public class AdminVoteController {
         voteService.delete(id);
     }
 
-    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Vote getVoteId(@PathVariable("id") int id) {
         return voteService.get(id);
     }

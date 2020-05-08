@@ -4,11 +4,11 @@ import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.model.Restaurant;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 
 public class RestaurantAndMenuTestData {
+
     public static final int REST1_ID = 1;
     public static final int REST2_ID = 2;
     public static final int REST3_ID = 3;
@@ -35,6 +35,11 @@ public class RestaurantAndMenuTestData {
 
     public static Menu getNewMenu() {
         return new Menu("NewBigMac", 2222, KFC, LocalDate.now().plusDays(1));
+    }
+    public static Restaurant updateRestaurant(){
+      //  MACD.setName("NewMacdonalds");
+        //return MACD;
+        return new Restaurant(REST1_ID,"NewMacd");
     }
 
 }

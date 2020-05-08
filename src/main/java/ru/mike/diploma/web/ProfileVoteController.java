@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.mike.diploma.AuthorizedUser;
 import ru.mike.diploma.model.Vote;
-import ru.mike.diploma.persistence.repository.RestaurantRepository;
 import ru.mike.diploma.services.RestaurantService;
 import ru.mike.diploma.services.VoteService;
 import ru.mike.diploma.util.TimeUtil;
@@ -31,8 +30,8 @@ public class ProfileVoteController {
     @Autowired
     VoteService voteService;
     private static final Logger log = LoggerFactory.getLogger(ProfileVoteController.class);
-    static final String POST_URL = "/api/profile/restaurants/{restaurantId}/votes";
-    static final String GET_URL = "/api/votes";
+    static final String POST_URL = "/rest/profile/restaurants/{restaurantId}/votes";
+    static final String GET_URL = "/rest/votes";
 
     @GetMapping(value = GET_URL, produces = MediaType.APPLICATION_JSON_VALUE)
     public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser) {

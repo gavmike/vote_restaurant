@@ -21,14 +21,14 @@ public class Main {
             appCtx.refresh();
         }*/
 
-        try (GenericXmlApplicationContext appCtx = new GenericXmlApplicationContext()) {
-            appCtx.getEnvironment().setActiveProfiles("hsqldb", "datajpa");
-            appCtx.load("spring/spring-web.xml");
-            appCtx.refresh();
+       // try (GenericXmlApplicationContext appCtx = new GenericXmlApplicationContext()) {
+          //  appCtx.getEnvironment().setActiveProfiles("hsqldb", "datajpa");
+          //  appCtx.load("spring/spring-web.xml");
+          //  appCtx.refresh();
            // System.out.println("Bean definition names: " + Arrays.toString(appCtx.getBeanDefinitionNames()));
-           MenuService menuService = (MenuService) appCtx.getBean("menuServiceImpl");
-            RestaurantService restaurantService =(RestaurantService) appCtx.getBean("restaurantServiceImpl");
-           restaurantService.delete(111);
+          // MenuService menuService = (MenuService) appCtx.getBean("menuServiceImpl");
+            //RestaurantService restaurantService =(RestaurantService) appCtx.getBean("restaurantServiceImpl");
+           //restaurantService.delete(111);
             //System.out.println("main "+restaurantService.get(1));
            // UserService userService = (UserService)appCtx.getBean("userService");
            // System.out.println( userService.getbyID(1));
@@ -78,7 +78,7 @@ public class Main {
            // System.out.println( menuJPA.getAllMenuDateandRestID(LocalDate.now(),1));
           //  menuJPA.addMenu(new Menu("lunch223",333, LocalDate.now()));
 
-        }
+       // }
 
     }
 }

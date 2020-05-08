@@ -15,15 +15,15 @@ import java.net.URI;
 @RestController
 @RequestMapping(AdminUserController.URL)
 public class AdminUserController {
-    static final String URL = "/admin/user";
+    static final String URL = "/rest/admin/user";
     final static Logger LOG = LoggerFactory.getLogger(AdminUserController.class);
     @Autowired
     UserService userService;
 
-    @GetMapping(value = "/get/{Id}")
-    public User getUser(@PathVariable("Id") int Id) {
-        LOG.info("id user ={}", Id);
-        return userService.get(Id);
+    @GetMapping(value = "/{id}")
+    public User getUser(@PathVariable("id") int id) {
+        LOG.info("id user ={}", id);
+        return userService.get(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -46,7 +46,7 @@ public class AdminUserController {
         return ResponseEntity.created(uriOfNewResource).body(updateUser);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") int id) {
         userService.delete(id);
     }

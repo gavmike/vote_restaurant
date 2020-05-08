@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.services.MenuService;
-
 import java.net.URI;
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
 
-@RequestMapping(value = "/api/admin/restaurants/{restId}/menus", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/rest/admin/restaurants/{restId}/menus", produces = MediaType.APPLICATION_JSON_VALUE)
 public class MenuController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
@@ -45,7 +43,7 @@ public class MenuController {
         return ResponseEntity.created(uriofNewResource).body(creatMenu);
     }
 
-    @DeleteMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable("id") int id, @PathVariable("restId") int restId) throws NotFoundException {
         menuService.delete(id, restId);
     }
