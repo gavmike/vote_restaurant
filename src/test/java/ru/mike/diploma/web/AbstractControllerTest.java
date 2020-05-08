@@ -24,7 +24,7 @@ import javax.annotation.PostConstruct;
 @RunWith(SpringRunner.class)
 @ActiveProfiles({"hsqldb","datajpa"})
 @Sql(scripts = "classpath:db/populateHSQLDB.sql",  config = @SqlConfig(encoding = "UTF-8"))
-public class AbstractControllerTest {
+public abstract class AbstractControllerTest {
 
     private static final CharacterEncodingFilter CHARACTER_ENCODING_FILTER = new CharacterEncodingFilter();
 
