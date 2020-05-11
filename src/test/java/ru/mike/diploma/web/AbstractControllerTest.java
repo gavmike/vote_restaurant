@@ -18,9 +18,12 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.annotation.PostConstruct;
+
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+
 @Transactional
 @WebAppConfiguration
-@ContextConfiguration({"classpath:spring-test.xml","classpath:spring/spring-mvc.xml"})
+@ContextConfiguration({"classpath:spring-test.xml","classpath:spring/spring-mvc.xml","classpath:spring/spring-security.xml"})
 @RunWith(SpringRunner.class)
 @ActiveProfiles({"hsqldb","datajpa"})
 @Sql(scripts = "classpath:db/populateHSQLDB.sql",  config = @SqlConfig(encoding = "UTF-8"))
@@ -38,13 +41,23 @@ public abstract class AbstractControllerTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    @PostConstruct
+/*    @PostConstruct
     private void postConstruct() {
         mockMvc = MockMvcBuilders
                 .webAppContextSetup(webApplicationContext)
                 .addFilter(CHARACTER_ENCODING_FILTER)
                 .build();
+    }*/
+    @PostConstruct
+    private void postConstruct() {
+        mockMvc = MockMvcBuilders
+                .webAppContextSetup(webApplicationContext)
+                .addFilter(CHARACTER_ENCODING_FILTER)
+                .apply(springSecurity())
+                .build();
     }
+
+
 
     public ResultActions perform(MockHttpServletRequestBuilder builder) throws Exception {
         return mockMvc.perform(builder);

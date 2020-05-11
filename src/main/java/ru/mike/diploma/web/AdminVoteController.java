@@ -24,12 +24,12 @@ public class AdminVoteController {
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteVote(@PathVariable("id") int id) {
+    public void delete(@PathVariable("id") int id) {
         voteService.delete(id);
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Vote getVoteId(@PathVariable("id") int id) {
+    public Vote get(@PathVariable("id") int id) {
         return voteService.get(id);
     }
 

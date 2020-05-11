@@ -31,13 +31,20 @@ public class ProfileVoteController {
     VoteService voteService;
     private static final Logger log = LoggerFactory.getLogger(ProfileVoteController.class);
     static final String POST_URL = "/rest/profile/restaurants/{restaurantId}/votes";
-    static final String GET_URL = "/rest/votes";
+    static final String GET_URL = "/rest/profile/votes";
 
     @GetMapping(value = GET_URL, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
+    public Vote get(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
         log.info("user {} ", authorizedUser.getUserTo());
-        return voteService.getAllByUserIdAndDate(authorizedUser.getId(), LocalDate.now());
+        return voteService.get(authorizedUser.getId());
+
     }
+
+    @GetMapping(value = GET_URL+"/allTodayByUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Vote getAllByUserIdAndDate(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
+        log.info("user {} ", authorizedUser.getUserTo());
+         return voteService.getAllByUserIdAndDate(authorizedUser.getId(),LocalDate.now());
+          }
 
     @PostMapping(value = POST_URL, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Vote> createOrUpdate(@PathVariable("restaurantId") int restaurantId, @AuthenticationPrincipal AuthorizedUser authorizedUser) {
@@ -47,7 +54,7 @@ public class ProfileVoteController {
             voteService.save(voteNew);
             URI uriOfNew = ServletUriComponentsBuilder.fromCurrentRequest()
                     .path("/{restaurantId}")
-                    .buildAndExpand(vote.getId()).toUri();
+                    .buildAndExpand(voteNew.getId()).toUri();
             return ResponseEntity.created(uriOfNew).body(voteNew);
         } else {
             log.info("update vote {} restauratnID {} user {}", vote, restaurantId, authorizedUser.getUserTo());
