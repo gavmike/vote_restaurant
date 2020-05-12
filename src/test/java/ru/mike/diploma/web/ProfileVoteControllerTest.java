@@ -31,7 +31,7 @@ public class ProfileVoteControllerTest extends AbstractControllerTest {
     public void get() throws Exception {
 
         perform(MockMvcRequestBuilders.get(GET_URL)
-                .with(userHttpBasic(mike)))
+                .with(userHttpBasic(USER_1)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -42,11 +42,11 @@ public class ProfileVoteControllerTest extends AbstractControllerTest {
     public void createOrUpdate() throws Exception {
         ResultActions resultActions = perform(MockMvcRequestBuilders.post(POST_URL, REST2_ID)
                 .contentType(MediaType.APPLICATION_JSON)
-                .with(userHttpBasic(chak)))
+                .with(userHttpBasic(ADMIN)))
                 .andExpect(status().isCreated());
 
         Vote returned = UtilWebTest.readFromJson(resultActions,Vote.class);
-        Vote created = new Vote(LocalDate.now(),KFC,chak);
+        Vote created = new Vote(LocalDate.now(),KFC,ADMIN);
         created.setId(returned.getId());
         assertThat(returned).isEqualTo(created);
     }
@@ -57,7 +57,7 @@ public class ProfileVoteControllerTest extends AbstractControllerTest {
         voteService.save(todayVote);
 
         ResultActions resultActions = perform(MockMvcRequestBuilders.get(GET_URL + "/allTodayByUser")
-                .with(userHttpBasic(mike)))
+                .with(userHttpBasic(USER_1)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))

@@ -18,27 +18,27 @@ public class UserServiceTest extends AbstractServiceTest {
     public void add() {
         User newUser = UserTestData.getCreatedUser();
         userService.add(newUser);
-        assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(mike, dive, chak, newUser));
+        assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(USER_1, USER_2, ADMIN, newUser));
 
     }
 
     @Test
     public void delete() {
-        userService.delete(mike_ID);
-        assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(dive, chak));
+        userService.delete(USER_1_ID);
+        assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(USER_2, ADMIN));
 
     }
 
     @Test
     public void get() {
-        User user = userService.get(mike_ID);
-        assertThat(user).isEqualToIgnoringGivenFields(mike, "votes", "password");
+        User user = userService.get(USER_1_ID);
+        assertThat(user).isEqualToIgnoringGivenFields(USER_1, "votes", "password");
     }
 
     @Test
     public void getByEmail() {
-        User user = userService.getByEmail("mike@yandex.ru");
-        assertThat(user).isEqualToIgnoringGivenFields(mike, "votes", "password");
+        User user = userService.getByEmail("user_1@yandex.ru");
+        assertThat(user).isEqualToIgnoringGivenFields(USER_1, "votes", "password");
     }
 
 

@@ -19,7 +19,7 @@ import static ru.mike.diploma.util.ValidationUtil.checkNotFoundWithId;
 @Transactional
 public class MenuServiceImpl implements MenuService {
     @Autowired
-    private MenuRepository menuRepository;
+  MenuRepository menuRepository;
     @Autowired
     private RestaurantRepository restaurantRepository;
     @Override

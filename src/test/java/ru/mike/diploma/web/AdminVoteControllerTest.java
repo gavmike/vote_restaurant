@@ -15,8 +15,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.mike.diploma.testData.UserTestData.chak;
-import static ru.mike.diploma.testData.UserTestData.mike;
+import static ru.mike.diploma.testData.UserTestData.ADMIN;
+import static ru.mike.diploma.testData.UserTestData.USER_1;
 import static ru.mike.diploma.testData.VoteTestData.*;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;
@@ -29,7 +29,7 @@ public class AdminVoteControllerTest extends AbstractControllerTest {
     @Test
     public void getAllToday() throws Exception {
         perform(MockMvcRequestBuilders.get(URL+"/today/all")
-                .with(userHttpBasic(chak)))
+                .with(userHttpBasic(ADMIN)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -39,7 +39,7 @@ public class AdminVoteControllerTest extends AbstractControllerTest {
     @Test
     public void delete() throws Exception {
         perform(MockMvcRequestBuilders.delete(URL+VOTE_1_ID)
-                .with(userHttpBasic(chak)))
+                .with(userHttpBasic(ADMIN)))
                 .andExpect(status().isNoContent());
 
         assertThat(voteService.getAllByDate(LocalDate.parse("2019-10-12"))).isEqualTo(List.of(VOTE_2));
@@ -50,7 +50,7 @@ public class AdminVoteControllerTest extends AbstractControllerTest {
     @Test
     public void get() throws Exception {
         perform(MockMvcRequestBuilders.get(URL+VOTE_1_ID)
-                .with(userHttpBasic(chak)))
+                .with(userHttpBasic(ADMIN)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))

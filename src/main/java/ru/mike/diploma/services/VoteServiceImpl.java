@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import ru.mike.diploma.model.Vote;
-import ru.mike.diploma.persistence.repository.MenuRepository;
-import ru.mike.diploma.persistence.repository.VoteRepository;
 
+import ru.mike.diploma.persistence.repository.VoteRepository;
+import ru.mike.diploma.persistence.repository.MenuRepository;
 import java.time.LocalDate;
 import java.util.List;
 

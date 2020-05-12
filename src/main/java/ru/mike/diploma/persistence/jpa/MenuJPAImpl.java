@@ -1,4 +1,4 @@
-package ru.mike.diploma.persistence.jpa;
+package ru.mike.persistence.jpa;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

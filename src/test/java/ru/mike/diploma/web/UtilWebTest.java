@@ -5,6 +5,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.RequestPostProcessor;
+import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.model.Restaurant;
 import ru.mike.diploma.model.User;
 import ru.mike.diploma.model.Vote;
@@ -24,6 +25,18 @@ public class UtilWebTest {
     }
     public static ResultMatcher contentJson(Restaurant expected) {
         return content().json(writeIgnoreProps(expected,"menuList","votes"));
+
+    }
+    public static ResultMatcher contentJson(Menu... expected) {
+        return content().json(writeValue(expected));
+    }
+    public static ResultMatcher contentJson(Menu expected) {
+        return content().json(writeValue(expected));
+    }
+
+    public static ResultMatcher contentJson(User expected) {
+        return content().json(writeIgnoreProps(expected,"votes"));
+
     }
     public static ResultMatcher contentJson(List<Restaurant> expected) {
         return content().json(writeIgnoreProps(expected,"menuList","votes"));

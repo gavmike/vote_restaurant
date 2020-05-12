@@ -24,11 +24,11 @@ insert into menu(name, price, datemenu, id_rest) values
 
 
 insert into user(name, email, password, role) values
-('mike', 'mike@yandex.ru', 'a123321', 'ROLE_USER');
+('USER_1', 'user_1@yandex.ru', 'a123321', 'ROLE_USER');
 insert into user(name, email, password, role) values
-('dive', 'dive@yandex.ru', 'b123321', 'ROLE_USER');
+('USER_2', 'user_2@yandex.ru', 'b123321', 'ROLE_USER');
 insert into user(name, email, password, role) values
-('chak', 'chak@mail.ru', 'a123321', 'ROLE_ADMIN');
+('ADMIN', 'admin@mail.ru', 'a123321', 'ROLE_ADMIN');
 
 insert into vote (dateVote, id_rest, id_user) VALUES
 ('2019-10-12',1,2),

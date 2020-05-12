@@ -10,8 +10,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static ru.mike.diploma.testData.RestaurantAndMenuTestData.REST1_ID;
-import static ru.mike.diploma.testData.UserTestData.dive_ID;
-import static ru.mike.diploma.testData.UserTestData.mike_ID;
+import static ru.mike.diploma.testData.UserTestData.USER_2_ID;
+import static ru.mike.diploma.testData.UserTestData.USER_1_ID;
 import static ru.mike.diploma.testData.VoteTestData.*;
 
 public class VoteServiceTest extends AbstractServiceTest {
@@ -26,12 +26,12 @@ public class VoteServiceTest extends AbstractServiceTest {
 
     @Test
     public void getAllByRestaurantIdAndDate() {
-        assertThat(voteService.getAllByUserIdAndDate(dive_ID, LocalDate.parse("2019-10-12"))).isEqualToComparingFieldByField(VOTE_1);
+        assertThat(voteService.getAllByUserIdAndDate(USER_2_ID, LocalDate.parse("2019-10-12"))).isEqualToComparingFieldByField(VOTE_1);
     }
 
     @Test
     public void getAllByUserIdAndDate() {
-        assertThat(voteService.getAllByUserIdAndDate(mike_ID, LocalDate.parse("2019-10-12"))).isEqualToComparingFieldByField(VOTE_2);
+        assertThat(voteService.getAllByUserIdAndDate(USER_1_ID, LocalDate.parse("2019-10-12"))).isEqualToComparingFieldByField(VOTE_2);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class VoteServiceTest extends AbstractServiceTest {
     @Test
     public void saveOrUpdate() {
         Vote updateVote = getUpdatedVote();
-        voteService.saveOrUpdate(updateVote, REST1_ID, dive_ID);
+        voteService.saveOrUpdate(updateVote, REST1_ID, USER_2_ID);
         assertThat(voteService.get(VOTE_1_ID)).isEqualToComparingFieldByField(updateVote);
     }
 }

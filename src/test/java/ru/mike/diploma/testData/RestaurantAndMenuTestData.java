@@ -4,14 +4,16 @@ import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.model.Restaurant;
 
 import java.time.LocalDate;
-import java.util.List;
-
 
 public class RestaurantAndMenuTestData {
-
     public static final int REST1_ID = 1;
     public static final int REST2_ID = 2;
     public static final int REST3_ID = 3;
+    public static final int MENU_1_ID = 1;
+    public static final int MENU_2_ID = 2;
+    public static final int MENU_3_ID = 3;
+    public static final int MENU_4_ID = 4;
+    public static final int MENU_5_ID = 5;
     public static final Restaurant MACD = new Restaurant(REST1_ID, "MacDonalds");
     public static final Restaurant KFC = new Restaurant(REST2_ID, "KFC");
     public static final Restaurant DoDo = new Restaurant(REST3_ID, "DoDo");
@@ -26,20 +28,16 @@ public class RestaurantAndMenuTestData {
     public static final Menu MENU1_OF_REST_2 = new Menu("Twister", 4, 232, KFC, DATE_1);
     public static final Menu MENU2_OF_REST_2 = new Menu("Fries", 3, 1400, KFC, DATE_2);
 
-    public static final List<Menu> MENUS_OF_REST_1 = List.of(MENU3_OF_REST_1,
-            MENU1_OF_REST_1, MENU2_OF_REST_1);
-
-    public static final List<Menu> TODAYS_MENUS_OF_REST_1 = List.of(MENU3_OF_REST_1);
-
-    public static final List<Menu> TODAYS_MENUS_OF_REST_2 = List.of(MENU2_OF_REST_2);
-
     public static Menu getNewMenu() {
-        return new Menu("NewBigMac", 2222, KFC, LocalDate.now().plusDays(1));
+        return new Menu("NewBigMac", 2222, KFC, LocalDate.now());
     }
-    public static Restaurant updateRestaurant(){
-      //  MACD.setName("NewMacdonalds");
-        //return MACD;
-        return new Restaurant(REST1_ID,"NewMacd");
+
+    public static Menu getUpdatedMenu() {
+        return new Menu("Updated Mac", MENU_1_ID, 3333, KFC, LocalDate.now());
+    }
+
+    public static Restaurant updateRestaurant() {
+        return new Restaurant(REST1_ID, "NewMacd");
     }
 
 }

@@ -41,13 +41,7 @@ public abstract class AbstractControllerTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-/*    @PostConstruct
-    private void postConstruct() {
-        mockMvc = MockMvcBuilders
-                .webAppContextSetup(webApplicationContext)
-                .addFilter(CHARACTER_ENCODING_FILTER)
-                .build();
-    }*/
+
     @PostConstruct
     private void postConstruct() {
         mockMvc = MockMvcBuilders
@@ -56,8 +50,6 @@ public abstract class AbstractControllerTest {
                 .apply(springSecurity())
                 .build();
     }
-
-
 
     public ResultActions perform(MockHttpServletRequestBuilder builder) throws Exception {
         return mockMvc.perform(builder);
