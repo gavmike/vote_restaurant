@@ -12,7 +12,6 @@ import ru.mike.diploma.model.User;
 import ru.mike.diploma.persistence.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 import static ru.mike.diploma.util.ValidationUtil.checkNotFound;
 import static ru.mike.diploma.util.ValidationUtil.checkNotFoundWithId;

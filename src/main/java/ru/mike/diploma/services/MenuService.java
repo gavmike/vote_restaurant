@@ -1,6 +1,5 @@
 package ru.mike.diploma.services;
 
-import javassist.NotFoundException;
 import ru.mike.diploma.model.Menu;
 
 import java.time.LocalDate;

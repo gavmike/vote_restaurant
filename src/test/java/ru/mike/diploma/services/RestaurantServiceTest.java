@@ -17,21 +17,17 @@ public class RestaurantServiceTest extends AbstractServiceTest {
     @Test
     public void get() {
         Restaurant rest = restaurantService.get(1);
-
         assertThat(rest).isEqualToIgnoringGivenFields(MACD, "votes", "menuList");
     }
 
     @Test
     public void delete() {
-
         restaurantService.delete(1);
-
         assertThat(restaurantService.getAll()).usingElementComparatorIgnoringFields("menuList","votes").isEqualTo(List.of(KFC));
     }
 
     @Test
     public void add() {
-
       restaurantService.add(DoDo);
         assertThat(restaurantService.getAll()).usingElementComparatorIgnoringFields("menuList","votes").isEqualTo(List.of(MACD,KFC,DoDo));
 

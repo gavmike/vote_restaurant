@@ -36,12 +36,10 @@ public class MenuServiceImpl implements MenuService {
     }
     @Override
     public Menu get(int menuId, int restId) {
-
         return menuRepository.getMenuByIdAndRestaurantId(menuId, restId);
     }
     @Override
     public void delete(int menuId, int restId) {
-
         checkNotFoundWithId(menuRepository.deleteByIdAndRestaurantId(menuId, restId) != 0, menuId);
 
     }

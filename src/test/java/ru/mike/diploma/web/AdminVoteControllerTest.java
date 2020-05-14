@@ -1,6 +1,5 @@
 package ru.mike.diploma.web;
 
-import jdk.net.SocketFlow;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -16,7 +15,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.mike.diploma.testData.UserTestData.ADMIN;
-import static ru.mike.diploma.testData.UserTestData.USER_1;
 import static ru.mike.diploma.testData.VoteTestData.*;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;

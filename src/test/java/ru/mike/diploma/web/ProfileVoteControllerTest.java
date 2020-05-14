@@ -8,7 +8,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import ru.mike.diploma.model.Vote;
 import ru.mike.diploma.services.VoteService;
-import ru.mike.diploma.web.json.JsonUtil;
 
 import java.time.LocalDate;
 

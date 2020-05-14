@@ -12,8 +12,6 @@ import ru.mike.diploma.web.json.JsonUtil;
 
 import java.util.List;
 
-
-import static org.assertj.core.api.Assertions.shouldHaveThrown;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.mike.diploma.testData.UserTestData.*;
@@ -52,10 +50,8 @@ public class AdminUserControllerTest extends AbstractControllerTest {
                 .with(userHttpBasic(ADMIN))
                 .content(JsonUtil.writeValue(updateUser)))
                 .andExpect(status().isCreated());
-        System.out.println(userService.get(updateUser.getId()));
 
 assertThat(userService.get(updateUser.getId())).isEqualToIgnoringGivenFields(updateUser,"votes","password");
-
 
     }
 

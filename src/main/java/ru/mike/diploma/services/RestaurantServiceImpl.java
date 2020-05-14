@@ -14,7 +14,6 @@ import ru.mike.diploma.persistence.repository.RestaurantRepository;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static ru.mike.diploma.util.ValidationUtil.checkNotFoundWithId;

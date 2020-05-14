@@ -24,13 +24,10 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
                 , new Object[]{restId, localDate}, new BeanPropertyRowMapper<>(Menu.class));
     }
 
-
-
     @Override
     public Menu getMenu(int menuId) {
 
         return (Menu) jdbcTemplate.query("select  * from menu where id =?",new Object[] {menuId},new MenuMapper()).stream().findAny().orElse(null);
-
     }
 
     @Override
@@ -43,7 +40,6 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
     public void addMenu(Menu menu) throws Exception {
         jdbcTemplate.update("insert into menu(name, price, datemenu, id_rest)  value (?,?,?,?)", menu.getName()
                 , menu.getPrice(), menu.getLocalDate(), menu.getRestaurant().getId());
-
     }
 
     @Override

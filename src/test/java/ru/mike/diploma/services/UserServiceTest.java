@@ -19,14 +19,12 @@ public class UserServiceTest extends AbstractServiceTest {
         User newUser = UserTestData.getCreatedUser();
         userService.add(newUser);
         assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(USER_1, USER_2, ADMIN, newUser));
-
     }
 
     @Test
     public void delete() {
         userService.delete(USER_1_ID);
         assertThat(userService.getAll()).usingElementComparatorIgnoringFields("votes", "password").isEqualTo(List.of(USER_2, ADMIN));
-
     }
 
     @Test
@@ -40,6 +38,5 @@ public class UserServiceTest extends AbstractServiceTest {
         User user = userService.getByEmail("user_1@yandex.ru");
         assertThat(user).isEqualToIgnoringGivenFields(USER_1, "votes", "password");
     }
-
 
 }

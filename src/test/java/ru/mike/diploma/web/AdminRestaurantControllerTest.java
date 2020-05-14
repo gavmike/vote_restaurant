@@ -3,15 +3,10 @@ package ru.mike.diploma.web;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.request.RequestPostProcessor;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import ru.mike.diploma.model.Restaurant;
-import ru.mike.diploma.model.User;
-import ru.mike.diploma.model.Vote;
 import ru.mike.diploma.services.RestaurantService;
 import ru.mike.diploma.testData.RestaurantAndMenuTestData;
 import ru.mike.diploma.web.json.JsonUtil;
@@ -20,21 +15,17 @@ import ru.mike.diploma.web.json.JsonUtil;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
 import static ru.mike.diploma.testData.UserTestData.ADMIN;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;
-import static ru.mike.diploma.web.json.JsonUtil.writeIgnoreProps;
 import static ru.mike.diploma.web.json.JsonUtil.writeValue;
 
 public class AdminRestaurantControllerTest extends AbstractControllerTest {
     @Autowired
     RestaurantService restaurantService;
-
     private static final String URL = AdminRestaurantController.URL + '/';
 
     @Test
@@ -47,7 +38,6 @@ public class AdminRestaurantControllerTest extends AbstractControllerTest {
                 .andExpect(contentJson(MACD));
     }
 
-
     @Test
     public void add() throws Exception {
         ResultActions perform = perform(MockMvcRequestBuilders.post(URL)
@@ -58,7 +48,6 @@ public class AdminRestaurantControllerTest extends AbstractControllerTest {
         int newId = addRestaurant.getId();
         DoDo.setId(newId);
         assertThat(addRestaurant).isEqualTo(DoDo).isEqualToIgnoringGivenFields(DoDo, "menuList", "votes");
-
     }
 
     @Test
@@ -88,6 +77,5 @@ public class AdminRestaurantControllerTest extends AbstractControllerTest {
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(contentJson(List.of(MACD, KFC)));
-
     }
 }

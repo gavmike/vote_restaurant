@@ -21,7 +21,6 @@ public class VoteTestData {
     public static final Vote VOTE_3 = new Vote(VOTE_3_ID, LocalDate.parse("2019-11-12"), KFC, ADMIN);
     public static final Vote NEW_VOTE = new Vote(NEW_VOTE_ID, LocalDate.parse("2020-11-12"), KFC, ADMIN);
 
-
     public static Vote getUpdatedVote(){
         return new Vote(VOTE_1_ID, LocalDate.parse("2020-07-25"), MACD, USER_2);
     }

@@ -1,11 +1,8 @@
 package ru.mike.diploma.util;
 
-
-
 import ru.mike.diploma.model.AbstractBaseEntity;
 import ru.mike.diploma.util.exception.IllegalRequestException;
 import ru.mike.diploma.util.exception.NotFoundException;
-
 
 public class ValidationUtil {
 

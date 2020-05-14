@@ -50,7 +50,6 @@ public class VoteServiceTest extends AbstractServiceTest {
     public void delete() {
         voteService.delete(VOTE_1_ID);
         voteService.get(VOTE_1_ID);
-
     }
 
     @Test

@@ -3,7 +3,6 @@ package ru.mike.diploma.services;
 import ru.mike.diploma.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
 
