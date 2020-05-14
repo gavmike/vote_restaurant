@@ -25,13 +25,12 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 
 
 
-credential
+#### credential
+`user_1@yandex.ru	a123321	ROLE_USER;`
+`user_2@yandex.ru	b123321	ROLE_USER;`
+`admin@mail.ru	a123321	ROLE_ADMIN;`
 
-user_1@yandex.ru	a123321	ROLE_USER;
-user_2@yandex.ru	b123321	ROLE_USER;
-admin@mail.ru	a123321	ROLE_ADMIN;
 
-============================================
 #### get user 
 `curl -s  http://localhost:8080/rest/admin/user/2 --user user_2@yandex.ru:b123321`
 #### add new user
@@ -63,4 +62,4 @@ admin@mail.ru	a123321	ROLE_ADMIN;
 
 #### delete vote
 `curl -s -X DELETE http://localhost:8080/rest/admin/vote/1 --user user_2@yandex.ru:b123321`
--------------------------------------------
+
