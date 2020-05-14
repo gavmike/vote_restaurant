@@ -5,8 +5,6 @@ target
 log
 *.patch
 */target/*
-db-data/
-
 /.idea/
 .log
 logdiploma.log
