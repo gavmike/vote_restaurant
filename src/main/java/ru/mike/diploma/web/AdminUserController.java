@@ -11,6 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.mike.diploma.model.User;
 import ru.mike.diploma.services.UserService;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -28,7 +29,7 @@ public class AdminUserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> add(@RequestBody User user) {
+    public ResponseEntity<User> add(@Valid @RequestBody User user) {
         User addUser = userService.add(user);
         LOG.info("User {}", addUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -37,9 +38,8 @@ public class AdminUserController {
         return ResponseEntity.created(uriOfNewResource).body(addUser);
     }
 
-    @PutMapping(/*value = "/{id}",*/consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-
-    public ResponseEntity<User> update(@RequestBody User user) {
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> update(@Valid @RequestBody User user) {
         User updateUser = userService.add(user);
         LOG.info("User {}", updateUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -47,11 +47,7 @@ public class AdminUserController {
                 .buildAndExpand(updateUser.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(updateUser);
     }
-   /* @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void update(@Valid @RequestBody UserTo userTo, @PathVariable("id") int id) {
-        log.info("update {} with id={}", userTo, id);
-        assureIdConsistent(userTo, id);
-        service.update(userTo, id);*/
+
     @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") int id) {

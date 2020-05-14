@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.services.MenuService;
+
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class MenuController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Menu> create(@PathVariable(name = "restId") int restId, @RequestBody Menu menu) {
+    public ResponseEntity<Menu> create(@PathVariable(name = "restId") int restId, @Valid @RequestBody Menu menu) {
         Menu creatMenu = menuService.add(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{menuId}")
@@ -50,7 +52,7 @@ public class MenuController {
     }
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Menu> update(@PathVariable(name = "restId") int restId, @RequestBody Menu menu) {
+    public ResponseEntity<Menu> update(@PathVariable(name = "restId") int restId, @Valid @RequestBody Menu menu) {
         Menu creatMenu = menuService.add(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{menuId}")

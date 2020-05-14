@@ -21,6 +21,7 @@ public class VoteServiceTest extends AbstractServiceTest {
     @Test
     public void get() {
         Vote vote = voteService.get(VOTE_1_ID);
+        assertThat(vote).isEqualTo(VOTE_1);
         assertThat(vote).isEqualToComparingFieldByField(VOTE_1);
     }
 

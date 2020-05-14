@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
 
     List<Menu> getMenuByLocalDateAndRestaurantId(LocalDate localDate, int restId);

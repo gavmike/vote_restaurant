@@ -11,6 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.mike.diploma.model.Restaurant;
 import ru.mike.diploma.services.RestaurantService;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
@@ -30,7 +31,7 @@ public class AdminRestaurantController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Restaurant> add(@RequestBody Restaurant restaurant) {
+    public ResponseEntity<Restaurant> add(@Valid @RequestBody Restaurant restaurant) {
         Restaurant restaurantNew = restaurantService.add(restaurant);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
@@ -40,7 +41,7 @@ public class AdminRestaurantController {
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@PathVariable("id") int id, @RequestBody Restaurant restaurant) {
+    public void update(@PathVariable("id") int id, @Valid @RequestBody Restaurant restaurant) {
         restaurantService.update(restaurant);
     }
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
