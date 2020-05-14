@@ -4,5 +4,5 @@ public enum ErrorType {
     DATA_NOT_FOUND,
     DATA_ERROR,
     VALIDATION_ERROR,
-    TIME_ERROR
+    APP_ERROR
 }

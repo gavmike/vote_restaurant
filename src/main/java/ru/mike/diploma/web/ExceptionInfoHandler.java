@@ -29,7 +29,7 @@ import static ru.mike.diploma.util.exception.ErrorType.*;
 @RestControllerAdvice(annotations = RestController.class)
 @Order(Ordered.HIGHEST_PRECEDENCE + 5)
 public class ExceptionInfoHandler {
-    private static Logger log = LoggerFactory.getLogger(ExceptionInfoHandler.class);
+ private static Logger log = LoggerFactory.getLogger(ExceptionInfoHandler.class);
 
 
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
@@ -49,7 +49,7 @@ public class ExceptionInfoHandler {
     }
 
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)  // 422
-    @ExceptionHandler({IllegalRequestException.class, ValidationException.class, MethodArgumentNotValidException.class,
+    @ExceptionHandler({IllegalRequestException.class,  ValidationException.class, MethodArgumentNotValidException.class,
             MethodArgumentTypeMismatchException.class, HttpMessageNotReadableException.class, BindException.class})
     public ErrorInfo illegalRequestDataError(HttpServletRequest req, Exception e) {
         Throwable rootCause = ValidationUtil.getRootCause(e);
@@ -70,8 +70,10 @@ public class ExceptionInfoHandler {
     @ExceptionHandler(Exception.class)
     @Order(Ordered.LOWEST_PRECEDENCE)
     public ErrorInfo handleError(HttpServletRequest req, Exception e) {
-        return logAndGetErrorInfo(req, e, true,TIME_ERROR);
+        return logAndGetErrorInfo(req, e, true,APP_ERROR);
     }
+
+
 
     private static ErrorInfo logAndGetErrorInfo(HttpServletRequest req, Exception e, boolean logException, ErrorType errorType) {
         Throwable rootCause = ValidationUtil.getRootCause(e);

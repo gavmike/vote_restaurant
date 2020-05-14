@@ -26,63 +26,41 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 
 
 credential
-=
-DBs - MySQL
-database - projectvoterestaurant
-(login - root, pass - root)
 
-mike@yandex.ru	a123321	ROLE_USER;
-dive@yandex.ru	b123321	ROLE_USER;
-chak@mail.ru	a123321	ROLE_ADMIN;
+user_1@yandex.ru	a123321	ROLE_USER;
+user_2@yandex.ru	b123321	ROLE_USER;
+admin@mail.ru	a123321	ROLE_ADMIN;
 
 ============================================
+#### get user 
+`curl -s  http://localhost:8080/rest/admin/user/2 --user user_2@yandex.ru:b123321`
+#### add new user
+`curl -s -X POST -d ' { "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/user --user admin@mail.ru:a123321`
+#### delete user
+`curl -s -X DELETE http://localhost:8080/rest/admin/user/3 --user admin@mail.ru:a123321`
 
-add new user
-curl -s -X POST -d ' { "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/user --user chak@mail.ru:a123321
+#### get restaurant
+`curl -s http://localhost:8080/rest/admin/restaurant/1 --user user_1@yandex.ru:a123321
+`
+#### add new restaurant
+`curl -s -X POST -d ' { "name": "BurgerKing"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurant --user admin@mail.ru:a123321
+`
+#### delete restaurant 
+`curl -s -X DELETE http://localhost:8080/rest/admin/restaurant/1 --user admin@mail.ru:a123321`
 
-get user
-curl -s http://localhost:8080/admin/user/get/1 --user chak@mail.ru:a123321
+#### get menu
+`curl -s http://localhost:8080/rest/admin/restaurants/1/menus/1 --user user_1@yandex.ru:a123321`
+#### update menu
 
-get restaurant
-curl -s http://localhost:8080/admin/restaurant/get/1 --user chak@mail.ru:a123321
+`curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurants/1/menus/update --user admin@mail.ru:a123321`
 
-add new restaturant
-curl -s -X POST -d ' { "name": "BurgerKing"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/restaurant --user chak@mail.ru:a123321
+#### delete menu
 
-get with todat menu 
-curl -s http://localhost:8080/admin/restaurant/getAllTodayMenu --user chak@mail.ru:a123321
+`curl -s -X DELETE http://localhost:8080/rest/admin/restaurants/1/menus/2 --user admin@mail.ru:a123321`
 
-get vote all today
-curl -s http://localhost:8080/admin/vote/today/all --user chak@mail.ru:a123321
+#### create vote or edit vote
+`curl -s -X POST -H  'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/profile/restaurants/1/votes --user user_1@yandex.ru:a123321`
 
-get vote 
-curl -s http://localhost:8080/admin/vote/get/1 --user chak@mail.ru:a123321
-
-create new vote or edit vote
- curl -s -X POST -H  'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/profile/restaurants/1/votes --user mike@yandex.ru:a123321
-
-get munu 
-curl -s http://localhost:8080/api/admin/restaurants/1/menus/1 --user mike@yandex.ru:a123321
-
-update menu 
-curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/admin/restaurants/1/menus/update --user chak@mail.ru:a123321
-
-delete menu 
-curl -s -X DELETE http://localhost:8080/api/admin/restaurants/1/menus/delete/2 --user chak@mail.ru:a123321
-
-
-delete rest 
-curl -s -X DELETE http://localhost:8080/admin/restaurant/delete/1 --user chak@mail.ru:a123321
-
-delete user 
-curl -s -X DELETE http://localhost:8080/admin/user/delete/1 --user chak@mail.ru:a123321
-
-delete vote 
-curl -s -X DELETE http://localhost:8080/admin/vote/1 --user chak@mail.ru:a123321
-
-update rest 
-curl -s -X PUT -d '  {"id":1,"name":"NewMacDonlUp"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/restaurant/update/1 --user chak@mail.ru:a123321
-
-update user 
-
-curl -s -X PUT -d '  {"id":1, "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/user --user chak@mail.ru:a123321
+#### delete vote
+`curl -s -X DELETE http://localhost:8080/rest/admin/vote/1 --user user_2@yandex.ru:b123321`
+-------------------------------------------
