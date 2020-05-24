@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.mike.diploma.model.User;
 
 @Repository
-@Transactional
+@Transactional(readOnly = true)
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     User getByEmail(String emeil);

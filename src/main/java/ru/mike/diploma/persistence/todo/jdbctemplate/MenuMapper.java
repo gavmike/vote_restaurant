@@ -1,4 +1,4 @@
-package ru.mike.diploma.persistence.jdbctemplate;
+package ru.mike.diploma.persistence.todo.jdbctemplate;
 
 import org.springframework.jdbc.core.RowMapper;
 import ru.mike.diploma.model.Menu;
@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MenuMapper implements RowMapper {
+public class MenuMapper implements RowMapper<Menu> {
     @Override
     public Menu mapRow(ResultSet resultSet, int i) throws SQLException {
 

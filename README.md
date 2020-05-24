@@ -32,23 +32,23 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 
 
 #### get user 
-`curl -s  http://localhost:8080/rest/admin/user/2 --user user_2@yandex.ru:b123321`
+`curl -s  http://localhost:8080/rest/admin/users/2 --user user_2@yandex.ru:b123321`
 #### add new user
 `curl -s -X POST -d ' { "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/user --user admin@mail.ru:a123321`
 #### delete user
-`curl -s -X DELETE http://localhost:8080/rest/admin/user/3 --user admin@mail.ru:a123321`
+`curl -s -X DELETE http://localhost:8080/rest/admin/users/3 --user admin@mail.ru:a123321`
 
 #### get restaurant
-`curl -s http://localhost:8080/rest/admin/restaurant/1 --user user_1@yandex.ru:a123321
-`
+`curl -s http://localhost:8080/rest/admin/restaurants/1 --user user_1@yandex.ru:a123321`
 #### add new restaurant
-`curl -s -X POST -d ' { "name": "BurgerKing"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurant --user admin@mail.ru:a123321
+`curl -s -X POST -d ' { "name": "BurgerKing"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurants --user admin@mail.ru:a123321
 `
 #### delete restaurant 
-`curl -s -X DELETE http://localhost:8080/rest/admin/restaurant/1 --user admin@mail.ru:a123321`
+`curl -s -X DELETE http://localhost:8080/rest/admin/restaurants/1 --user admin@mail.ru:a123321`
 
 #### get menu
-`curl -s http://localhost:8080/rest/admin/restaurants/1/menus/1 --user user_1@yandex.ru:a123321`
+
+`curl -s http://localhost:8080/rest/restaurants/1/menus --user user_1@yandex.ru:a123321`
 #### update menu
 
 `curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurants/1/menus/1 --user admin@mail.ru:a123321`
@@ -61,5 +61,5 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 `curl -s -X POST -H  'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/profile/restaurants/1/votes --user user_1@yandex.ru:a123321`
 
 #### delete vote
-`curl -s -X DELETE http://localhost:8080/rest/admin/vote/1 --user user_2@yandex.ru:b123321`
+`curl -s -X DELETE http://localhost:8080/rest/admin/votes/1 --user user_2@yandex.ru:b123321`
 

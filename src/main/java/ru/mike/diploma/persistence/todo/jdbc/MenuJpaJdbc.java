@@ -1,11 +1,11 @@
-package ru.mike.diploma.persistence.jdbc;
+package ru.mike.diploma.persistence.todo.jdbc;
 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.Menujpa;
+import ru.mike.diploma.persistence.todo.MenuJpa;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.TimeZone;
 
 @Component
-public class MenuJpaJdbc implements Menujpa {
+public class MenuJpaJdbc implements MenuJpa {
     private static Connection conn;
     final static Logger LOG = LoggerFactory.getLogger(MenuJpaJdbc.class);
 

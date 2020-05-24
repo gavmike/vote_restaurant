@@ -18,25 +18,26 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = MenuController.URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping( produces = MediaType.APPLICATION_JSON_VALUE)
 public class MenuController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
     MenuService menuService;
     static final String URL ="/rest/admin/restaurants/{restId}/menus";
+    static final String URL_USER ="/rest/restaurants/{restId}/menus";
 
-    @GetMapping(value = "/{menuId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value =URL_USER+ "/{menuId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Menu get(@PathVariable(name = "menuId") int menuId, @PathVariable(name = "restId") int restId) {
         log.info("menuId = {}", menuId);
         return menuService.get(menuId, restId);
     }
 
-    @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value =URL_USER, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Menu> getAllByRestaurantId(@PathVariable(name = "restId") int restId) {
         return menuService.getAllByRestaurantId(restId);
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = URL, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Menu> create(@PathVariable(name = "restId") int restId, @Valid @RequestBody Menu menu) {
         Menu creatMenu = menuService.add(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -45,13 +46,13 @@ public class MenuController {
         return ResponseEntity.created(uriofNewResource).body(creatMenu);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = URL+"/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") int id, @PathVariable("restId") int restId) throws NotFoundException {
         menuService.delete(id, restId);
     }
 
-    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value =URL+ "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Menu> update(@PathVariable(name = "restId") int restId, @Valid @RequestBody Menu menu) {
         Menu creatMenu = menuService.add(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()

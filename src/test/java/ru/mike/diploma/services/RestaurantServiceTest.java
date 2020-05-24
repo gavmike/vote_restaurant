@@ -28,7 +28,7 @@ public class RestaurantServiceTest extends AbstractServiceTest {
 
     @Test
     public void add() {
-      restaurantService.add(DoDo);
+      restaurantService.addOrUpdate(DoDo);
         assertThat(restaurantService.getAll()).usingElementComparatorIgnoringFields("menuList","votes").isEqualTo(List.of(MACD,KFC,DoDo));
 
     }
@@ -38,6 +38,11 @@ public class RestaurantServiceTest extends AbstractServiceTest {
     public void getAll() {
         assertThat(restaurantService.getAll()).usingElementComparatorIgnoringFields("menuList","votes").isEqualTo(List.of(MACD,KFC));
 
+    }
+    @Test
+    public void getAllWithTodayMenu(){
+        System.out.println(restaurantService.getAllWithTodayMenu());
+        assertThat(restaurantService.getAllWithTodayMenu()).isEqualTo(List.of(MACD,KFC));
     }
 
 }

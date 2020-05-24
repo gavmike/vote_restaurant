@@ -24,10 +24,11 @@ public class MenuControllerTest extends AbstractControllerTest {
     @Autowired
     MenuService menuService;
     public static final String URL = MenuController.URL + "/";
+    public static final String URL_USER = MenuController.URL_USER + "/";
 
     @Test
     public void get() throws Exception {
-        ResultActions resultActions = perform(MockMvcRequestBuilders.get(URL + MENU_1_ID, REST1_ID)
+        ResultActions resultActions = perform(MockMvcRequestBuilders.get(URL_USER + MENU_1_ID, REST1_ID)
                 .with(userHttpBasic(USER_1)))
                 .andExpect(status().isOk())
                 .andDo(print())
@@ -40,7 +41,7 @@ public class MenuControllerTest extends AbstractControllerTest {
 
     @Test
     public void getAllByRestaurantId() throws Exception {
-        perform(MockMvcRequestBuilders.get(URL + "all", REST2_ID)
+        perform(MockMvcRequestBuilders.get(URL_USER , REST2_ID)
                 .with(userHttpBasic(USER_2)))
                 .andExpect(status().isOk())
                 .andDo(print())

@@ -1,11 +1,11 @@
-package ru.mike.diploma.persistence.jdbctemplate;
+package ru.mike.diploma.persistence.todo.jdbctemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.Menujpa;
+import ru.mike.diploma.persistence.todo.MenuJpa;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -13,14 +13,14 @@ import java.util.List;
 import java.util.TimeZone;
 
 @Component
-public class MenuJpaJdbcTemplate implements Menujpa {
+public class MenuJpaJdbcTemplate implements MenuJpa {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override
     public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException {
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
-        return jdbcTemplate.query("select * from  menu where id_rest = ? and datemenu = ? "
+        return jdbcTemplate.query("select * from  menu where id_rest = ? and date = ? "
                 , new Object[]{restId, localDate}, new BeanPropertyRowMapper<>(Menu.class));
     }
 
@@ -38,20 +38,20 @@ public class MenuJpaJdbcTemplate implements Menujpa {
 
     @Override
     public void addMenu(Menu menu) throws Exception {
-        jdbcTemplate.update("insert into menu(name, price, datemenu, id_rest)  value (?,?,?,?)", menu.getName()
+        jdbcTemplate.update("insert into menu(name, price, date, id_rest)  value (?,?,?,?)", menu.getName()
                 , menu.getPrice(), menu.getLocalDate(), menu.getRestaurant().getId());
     }
 
     @Override
     public List<Menu> getAllMenuDate(LocalDate localDate) {
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
-        return jdbcTemplate.query("select * from  menu where datemenu = ?", new Object[]{localDate}, new MenuMapper());
+        return jdbcTemplate.query("select * from  menu where date = ?", new Object[]{localDate}, new MenuMapper());
 
     }
 
     @Override
     public void updateMenu(Menu menu, int restId) {
-        jdbcTemplate.update("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ", menu.getName(), menu.getPrice()
+        jdbcTemplate.update("update menu set name=?, price=?, date=?  where id_rest =? and id = ?  ", menu.getName(), menu.getPrice()
                 , menu.getLocalDate(), menu.getId(), restId);
 
     }

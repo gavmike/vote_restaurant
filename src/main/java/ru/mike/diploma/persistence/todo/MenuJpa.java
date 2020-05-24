@@ -1,4 +1,4 @@
-package ru.mike.diploma.persistence;
+package ru.mike.diploma.persistence.todo;
 
 import ru.mike.diploma.model.Menu;
 
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface Menujpa {
+public interface MenuJpa {
     List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException;
 
     Menu getMenu(int menuId);

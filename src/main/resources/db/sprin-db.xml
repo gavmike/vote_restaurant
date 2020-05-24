@@ -10,7 +10,7 @@
 
     <tx:annotation-driven/>
     <beans profile="jdbc">
-        <context:component-scan base-package="ru.mike.diploma.persistence.jdbctemplate"/>
+        <context:component-scan base-package="ru.mike.diploma.persistence.todo.jdbctemplate"/>
         <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
             <constructor-arg ref="datasource"/>
         </bean>
@@ -68,7 +68,7 @@
     </beans>
 
     <beans profile="hibernate">
-        <context:component-scan base-package="ru.mike.diploma.persistence.hibernate"/>
+        <context:component-scan base-package="ru.mike.diploma.persistence.todo.hibernate"/>
         <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
             <property name="dataSource" ref="datasource"/>
             <property name="hibernateProperties">
