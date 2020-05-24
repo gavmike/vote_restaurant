@@ -1,4 +1,4 @@
-package ru.mike.diploma.persistence.Hibernate;
+package ru.mike.diploma.persistence.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,17 +8,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.MenuJPA;
-import ru.mike.diploma.persistence.jdbc.MenuJPAImplJDBC;
+import ru.mike.diploma.persistence.Menujpa;
+import ru.mike.diploma.persistence.jdbc.MenuJpaJdbc;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Component
-public class MenuJPAHibernateImpl implements MenuJPA {
+public class MenuJpaHibernate implements Menujpa {
     @Autowired
     private SessionFactory sessionFactory;
-    final static Logger LOG = LoggerFactory.getLogger(MenuJPAImplJDBC.class);
+    final static Logger LOG = LoggerFactory.getLogger(MenuJpaJdbc.class);
 
     private Session currentSession() {
         return sessionFactory.openSession();

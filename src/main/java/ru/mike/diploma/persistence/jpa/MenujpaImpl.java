@@ -3,7 +3,7 @@ package ru.mike.persistence.jpa;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.MenuJPA;
+import ru.mike.diploma.persistence.Menujpa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @Component
 @Transactional(readOnly = true)
-public class MenuJPAImpl implements MenuJPA {
+public class MenujpaImpl implements Menujpa {
 
     @PersistenceContext(unitName = "entityManagerFactory")
     private EntityManager entityManager;

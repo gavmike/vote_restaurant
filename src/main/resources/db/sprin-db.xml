@@ -10,7 +10,7 @@
 
     <tx:annotation-driven/>
     <beans profile="jdbc">
-        <context:component-scan base-package="ru.mike.diploma.persistence.jdbcTemplate"/>
+        <context:component-scan base-package="ru.mike.diploma.persistence.jdbctemplate"/>
         <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
             <constructor-arg ref="datasource"/>
         </bean>
@@ -46,7 +46,7 @@
         <bean id="datasource"
               class="org.springframework.jdbc.datasource.DriverManagerDataSource"
               p:driverClassName="org.hsqldb.jdbcDriver"
-              p:url="${database.url}"
+              p:url="jdbc:hsqldb:file:db-data/mydatabase2"
               p:username="${database.username}"
               p:password="${database.password}"/>
 
@@ -68,7 +68,7 @@
     </beans>
 
     <beans profile="hibernate">
-        <context:component-scan base-package="ru.mike.diploma.persistence.Hibernate"/>
+        <context:component-scan base-package="ru.mike.diploma.persistence.hibernate"/>
         <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
             <property name="dataSource" ref="datasource"/>
             <property name="hibernateProperties">

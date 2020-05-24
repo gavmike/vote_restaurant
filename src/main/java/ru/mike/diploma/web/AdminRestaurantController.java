@@ -23,7 +23,7 @@ public class AdminRestaurantController {
     final static Logger LOG = LoggerFactory.getLogger(AdminRestaurantController.class);
     @Autowired
     RestaurantService restaurantService;
-    static final String URL = "/rest/admin/restaurant";
+    static final String URL = "/rest/admin/restaurants";
 
     @GetMapping("/{id}")
     public Restaurant get(@PathVariable("id") int id) {

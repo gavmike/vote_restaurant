@@ -1,42 +1,46 @@
-use  projectvoterestaurant;
-drop table  IF EXISTS vote;
-drop table  if exists menu ;
-drop table  IF EXISTS user;
-drop table  if exists restaurant;
+use projectvoterestaurant;
+drop table IF EXISTS vote;
+drop table if exists menu;
+drop table IF EXISTS user;
+drop table if exists restaurant;
 
 
 create table restaurant
 (
-    id int primary key auto_increment,
+    id   int primary key auto_increment,
     name varchar(50)
 );
 
 create table menu
 (
-    id int primary key auto_increment,
-    name varchar(50),
-    price int,
-    datemenu date,
-    id_rest int, foreign key (id_rest) references restaurant(id) on delete cascade
+    id       int primary key auto_increment,
+    name     varchar(50),
+    price    int,
+    date date,
+    id_rest  int,
+    foreign key (id_rest) references restaurant (id) on delete cascade
 );
 create table user
 (
-    id int primary key auto_increment,
-    name varchar(50),
-    email varchar(50),
+    id       int primary key auto_increment,
+    name     varchar(50),
+    email    varchar(50),
     password varchar(50),
-    role varchar(50)
+    role     varchar(50)
 );
 create unique index user_unique_email_idx
     on user (email);
 create table vote
 (
     id       int primary key auto_increment,
-    dateVote date,
+    date date,
     id_rest  int,
     id_user  int,
     foreign key (id_rest) references restaurant (id) on delete cascade,
     foreign key (id_user) references user (id) on delete cascade
 );
-create unique index user_unique_dateVote_idx
-    on vote (id_user, dateVote);
+create unique index user_unique_date_vote_idx
+    on vote (id_user, date);
+
+create unique index menu_restaurant_date_unique
+    on menu(date,id_rest);

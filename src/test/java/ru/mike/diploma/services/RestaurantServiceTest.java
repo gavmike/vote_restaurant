@@ -8,7 +8,7 @@ import java.util.List;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.*;
 
 public class RestaurantServiceTest extends AbstractServiceTest {
     @Autowired

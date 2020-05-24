@@ -51,7 +51,7 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 `curl -s http://localhost:8080/rest/admin/restaurants/1/menus/1 --user user_1@yandex.ru:a123321`
 #### update menu
 
-`curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurants/1/menus/update --user admin@mail.ru:a123321`
+`curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/rest/admin/restaurants/1/menus/1 --user admin@mail.ru:a123321`
 
 #### delete menu
 

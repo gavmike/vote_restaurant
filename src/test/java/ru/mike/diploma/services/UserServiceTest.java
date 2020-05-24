@@ -3,12 +3,12 @@ package ru.mike.diploma.services;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.mike.diploma.model.User;
-import ru.mike.diploma.testData.UserTestData;
+import ru.mike.diploma.testdata.UserTestData;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static ru.mike.diploma.testData.UserTestData.*;
+import static ru.mike.diploma.testdata.UserTestData.*;
 
 public class UserServiceTest extends AbstractServiceTest {
     @Autowired

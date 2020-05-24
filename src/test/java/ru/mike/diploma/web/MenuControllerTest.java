@@ -15,8 +15,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
-import static ru.mike.diploma.testData.UserTestData.*;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.*;
+import static ru.mike.diploma.testdata.UserTestData.*;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;
 
@@ -51,14 +51,14 @@ public class MenuControllerTest extends AbstractControllerTest {
     @Test
     public void create() throws Exception {
         Menu newMenu = getNewMenu();
-        ResultActions resultActions = perform(MockMvcRequestBuilders.post(URL, REST1_ID)
+        ResultActions resultActions = perform(MockMvcRequestBuilders.post(URL, REST2_ID)
                 .contentType(MediaType.APPLICATION_JSON)
                 .with(userHttpBasic(ADMIN))
                 .content(JsonUtil.writeValue(newMenu)))
                 .andExpect(status().isCreated())
                 .andDo(print());
         Menu returnedMenu = UtilWebTest.readFromJson(resultActions, Menu.class);
-        assertThat(menuService.get(returnedMenu.getId(), REST1_ID)).isEqualTo(returnedMenu);
+        assertThat(menuService.get(returnedMenu.getId(), REST2_ID)).isEqualTo(returnedMenu);
     }
 
     @Test

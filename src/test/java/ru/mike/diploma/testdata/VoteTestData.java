@@ -1,12 +1,12 @@
-package ru.mike.diploma.testData;
+package ru.mike.diploma.testdata;
 
 import ru.mike.diploma.model.Vote;
 
 import java.time.LocalDate;
 
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.KFC;
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.MACD;
-import static ru.mike.diploma.testData.UserTestData.*;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.KFC;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.MACD;
+import static ru.mike.diploma.testdata.UserTestData.*;
 
 public class VoteTestData {
 

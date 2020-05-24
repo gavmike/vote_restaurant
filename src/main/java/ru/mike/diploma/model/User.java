@@ -18,24 +18,26 @@ public class User extends AbstractNamedEntity {
     }
 
     public User(String email, Role role, String password) {
-        this.email = email;
+        this(null,null,email,role,password);
+        /*this.email = email;
         this.role = role;
-        this.password = password;
+        this.password = password;*/
     }
 
-    public User(String name, Integer id, String email, Role role, String password) {
+    public User(Integer id, String name,  String email, Role role, String password) {
         super(name, id);
         this.email = email;
         this.role = role;
         this.password = password;
     }
 
-    public User(String name, String email, String password, Role role) {
-        super(name, null);
+    public User(String name, String email,  Role role,String password) {
+        this(null,name,email,role,password);
+     /*   super(name, null);
         this.email = email;
         this.role = role;
-        this.password = password;
-        this.role = role;
+        this.password = password;*/
+
     }
 
     public String getEmail() {

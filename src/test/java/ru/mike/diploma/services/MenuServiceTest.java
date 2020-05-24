@@ -8,7 +8,7 @@ import ru.mike.diploma.model.Menu;
 import java.time.LocalDate;
 import java.util.List;
 
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.*;
 
 public class MenuServiceTest extends AbstractServiceTest {
     @Autowired
@@ -35,10 +35,10 @@ public class MenuServiceTest extends AbstractServiceTest {
     }
 
     @Test
-    public void getAllMenuDateandRestID() {
+    public void getAllMenuDateAndRestId() {
 
         List<Menu> menuListDB = menuService.getAllByDateAndRestaurantId(DATE_1, REST1_ID);
-        Assert.assertEquals(List.of(MENU1_OF_REST_1, MENU2_OF_REST_1), menuListDB);
+        Assert.assertEquals(List.of(MENU1_OF_REST_1), menuListDB);
     }
 
     @Test

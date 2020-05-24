@@ -1,11 +1,11 @@
-package ru.mike.diploma.persistence.jdbcTemplate;
+package ru.mike.diploma.persistence.jdbctemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.MenuJPA;
+import ru.mike.diploma.persistence.Menujpa;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 @Component
-public class MenuJPAJDBCTemplateImpl implements MenuJPA {
+public class MenuJpaJdbcTemplate implements Menujpa {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

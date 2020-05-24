@@ -8,3 +8,4 @@ log
 /.idea/
 .log
 logdiploma.log
+*.log

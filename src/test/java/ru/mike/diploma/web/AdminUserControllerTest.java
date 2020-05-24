@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.mike.diploma.testData.UserTestData.*;
+import static ru.mike.diploma.testdata.UserTestData.*;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;
 import static org.assertj.core.api.Assertions.assertThat;

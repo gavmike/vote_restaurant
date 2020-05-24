@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import ru.mike.diploma.model.Menu;
-import ru.mike.diploma.persistence.MenuJPA;
+import ru.mike.diploma.persistence.Menujpa;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,9 +18,9 @@ import java.util.Properties;
 import java.util.TimeZone;
 
 @Component
-public class MenuJPAImplJDBC implements MenuJPA {
+public class MenuJpaJdbc implements Menujpa {
     private static Connection conn;
-    final static Logger LOG = LoggerFactory.getLogger(MenuJPAImplJDBC.class);
+    final static Logger LOG = LoggerFactory.getLogger(MenuJpaJdbc.class);
 
     static {
         String username = null;
@@ -51,7 +51,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
     public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException {
 
         List<Menu> menuList = new ArrayList<>();
-        PreparedStatement preparedStatement = conn.prepareStatement("select * from  menu where id_rest = ? and datemenu = ?");
+        PreparedStatement preparedStatement = conn.prepareStatement("select * from  menu where id_rest = ? and date = ?");
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
         preparedStatement.setDate(2, Date.valueOf(localDate));
         preparedStatement.setInt(1, restId);
@@ -63,7 +63,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
             Integer price = resultSet.getInt("price");
             Date date = resultSet.getDate("datemenu");
             LOG.info("id={}", id);
-            Menu menu = new Menu(name, id, price, date.toLocalDate());
+            Menu menu = new Menu(id,name,  price, date.toLocalDate());
             menuList.add(menu);
         }
         return menuList;
@@ -84,7 +84,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
 
     @Override
     public void addMenu(Menu menu) throws Exception {
-        PreparedStatement preparedStatement = conn.prepareStatement("insert into menu(name, price, datemenu, id_rest)  value (?,?,?,?)");
+        PreparedStatement preparedStatement = conn.prepareStatement("insert into menu(name, price, date, id_rest)  value (?,?,?,?)");
         preparedStatement.setString(1, menu.getName());
         preparedStatement.setLong(2, menu.getPrice());
         preparedStatement.setDate(3, Date.valueOf(menu.getLocalDate()));
@@ -96,7 +96,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
     @Override
     public List<Menu> getAllMenuDate(LocalDate localDate) throws SQLException {
         List<Menu> menuList = new ArrayList<>();
-        PreparedStatement prepst = conn.prepareStatement("select * from  menu where datemenu = ?");
+        PreparedStatement prepst = conn.prepareStatement("select * from  menu where date = ?");
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
         prepst.setDate(1, java.sql.Date.valueOf(localDate));
         ResultSet rs = prepst.executeQuery();
@@ -108,7 +108,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
             Integer id_rest = rs.getInt("id_rest");
             Date datemenu = rs.getDate("datemenu");
             LOG.info("id={}", id);
-            Menu menu = new Menu(name, id, price, datemenu.toLocalDate());
+            Menu menu = new Menu( id,name, price, datemenu.toLocalDate());
             menuList.add(menu);
         }
         return menuList;
@@ -116,7 +116,7 @@ public class MenuJPAImplJDBC implements MenuJPA {
 
     @Override
     public void updateMenu(Menu menu, int restId) throws SQLException {
-        PreparedStatement preparedStatement = conn.prepareStatement("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ");
+        PreparedStatement preparedStatement = conn.prepareStatement("update menu set name=?, price=?, date=?  where id_rest =? and id = ?  ");
         preparedStatement.setString(1, menu.getName());
         preparedStatement.setLong(2, menu.getPrice());
         preparedStatement.setDate(3, Date.valueOf(menu.getLocalDate()));

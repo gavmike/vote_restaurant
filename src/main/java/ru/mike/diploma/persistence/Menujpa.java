@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface MenuJPA {
+public interface Menujpa {
     List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restId) throws SQLException;
 
     Menu getMenu(int menuId);

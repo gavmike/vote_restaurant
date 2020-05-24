@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = AdminVoteController.URL)
 public class AdminVoteController {
-    static final String URL = "/rest/admin/vote";
+    static final String URL = "/rest/admin/votes";
     @Autowired
     VoteService voteService;
 

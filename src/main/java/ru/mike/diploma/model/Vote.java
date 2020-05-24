@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Table(name = "vote")
 
 public class Vote extends AbstractBaseEntity {
-    @Column(name = "dateVote")
+    @Column(name = "date")
     private LocalDate localDate;
 
     @JoinColumn(name = "id_rest")
@@ -34,9 +34,10 @@ public class Vote extends AbstractBaseEntity {
     }
 
     public Vote(LocalDate localDate, Restaurant restaurant, User user) {
-        this.localDate = localDate;
+        this(null,localDate,restaurant,user);
+       /* this.localDate = localDate;
         this.restaurant = restaurant;
-        this.user = user;
+        this.user = user;*/
     }
 
     public LocalDate getLocalDate() {

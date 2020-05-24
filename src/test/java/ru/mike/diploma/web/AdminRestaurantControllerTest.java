@@ -8,7 +8,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import ru.mike.diploma.model.Restaurant;
 import ru.mike.diploma.services.RestaurantService;
-import ru.mike.diploma.testData.RestaurantAndMenuTestData;
+import ru.mike.diploma.testdata.RestaurantAndMenuTestData;
 import ru.mike.diploma.web.json.JsonUtil;
 
 
@@ -17,8 +17,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.mike.diploma.testData.RestaurantAndMenuTestData.*;
-import static ru.mike.diploma.testData.UserTestData.ADMIN;
+import static ru.mike.diploma.testdata.RestaurantAndMenuTestData.*;
+import static ru.mike.diploma.testdata.UserTestData.ADMIN;
 import static ru.mike.diploma.web.UtilWebTest.contentJson;
 import static ru.mike.diploma.web.UtilWebTest.userHttpBasic;
 import static ru.mike.diploma.web.json.JsonUtil.writeValue;

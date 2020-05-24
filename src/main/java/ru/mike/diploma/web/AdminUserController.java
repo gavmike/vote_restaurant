@@ -17,7 +17,7 @@ import java.net.URI;
 @RestController
 @RequestMapping(AdminUserController.URL)
 public class AdminUserController {
-    static final String URL = "/rest/admin/user";
+    static final String URL = "/rest/admin/users";
     final static Logger LOG = LoggerFactory.getLogger(AdminUserController.class);
     @Autowired
     UserService userService;
