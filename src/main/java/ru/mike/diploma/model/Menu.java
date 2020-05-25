@@ -24,25 +24,16 @@ public class Menu extends AbstractNamedEntity {
 
     public Menu(long price, Restaurant restaurant, LocalDate localDate) {
         this(null,null,price,restaurant,localDate);
-      /*  this.price = price;
-        this.restaurant = restaurant;
-        this.localDate = localDate;*/
+
     }
 
     public Menu(String name, long price, LocalDate localDate) {
         this(null,name,price,null,localDate);
-        /*this.name = name;
-        this.price = price;
-        this.localDate = localDate;*/
-    }
+          }
 
     public Menu(String name, long price, Restaurant restaurant, LocalDate localDate) {
         this(null,name,price,restaurant,localDate);
-      /*  super(name, null);
-        this.price = price;
-        this.restaurant = restaurant;
-        this.localDate = localDate;*/
-    }
+         }
 
 
     public Menu( Integer id,String name, long price, Restaurant restaurant, LocalDate localDate) {
@@ -54,10 +45,7 @@ public class Menu extends AbstractNamedEntity {
 
     public Menu( Integer id,String name, long price, LocalDate localDate) {
         this(id,name,price,null,localDate);
-   /*     super(name, id);
-        this.price = price;
-        this.localDate = localDate;*/
-    }
+       }
 
     public Menu() {
     }

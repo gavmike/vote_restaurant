@@ -34,11 +34,9 @@ public class RestaurantService  {
         return restaurantRepository.findById(id).orElseThrow();
     }
 
-
     public void delete(int id) {
                restaurantRepository.deleteById(id);
     }
-
 
     public Restaurant addOrUpdate(Restaurant restaurant) {
         Assert.notNull(restaurant, "the Restaurant should not be empty");

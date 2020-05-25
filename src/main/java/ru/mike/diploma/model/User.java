@@ -19,9 +19,7 @@ public class User extends AbstractNamedEntity {
 
     public User(String email, Role role, String password) {
         this(null,null,email,role,password);
-        /*this.email = email;
-        this.role = role;
-        this.password = password;*/
+
     }
 
     public User(Integer id, String name,  String email, Role role, String password) {
@@ -33,10 +31,6 @@ public class User extends AbstractNamedEntity {
 
     public User(String name, String email,  Role role,String password) {
         this(null,name,email,role,password);
-     /*   super(name, null);
-        this.email = email;
-        this.role = role;
-        this.password = password;*/
 
     }
 

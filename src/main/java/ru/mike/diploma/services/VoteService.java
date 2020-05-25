@@ -41,26 +41,21 @@ public class VoteService {
         return voteRepository.getAllByRestaurantIdAndLocalDate(restId, localDate);
     }
 
-
     public Vote getAllByUserIdAndDate(int userId, LocalDate localDate) {
         return voteRepository.getAllByUserIdAndLocalDate(userId, localDate);
     }
-
 
     public List<Vote> getAllByDate(LocalDate localDate) {
         return voteRepository.getAllByLocalDate(localDate);
     }
 
-
     public Vote save(Vote vote) {
         return voteRepository.save(vote);
     }
 
-
     public void delete(int id) {
         voteRepository.deleteById(id);
     }
-
 
     public Vote saveOrUpdate(Vote vote, int restId, int userId) {
         if (vote == null) {

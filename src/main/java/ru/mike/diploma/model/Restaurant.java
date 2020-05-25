@@ -38,16 +38,13 @@ public class Restaurant extends AbstractNamedEntity {
 
     public Restaurant(List<Menu> menuList, List<Vote> votes) {
         this(null,null,menuList,votes);
-       /* this.menuList = menuList;
-        this.votes = votes;*/
-    }
+        }
 
     public Restaurant() {
     }
 
     public Restaurant(String name) {
         this(null,name,null,null);
-/*        super(name, null);*/
     }
 
     public Restaurant(int id, String name) {
@@ -56,8 +53,7 @@ public class Restaurant extends AbstractNamedEntity {
 
     public Restaurant(Integer id,String name) {
         this(id,name,null,null);
-       /* super(name, id);*/
-    }
+          }
 
     public Restaurant(Integer id, String name,  List<Menu> menuList, List<Vote> votes) {
         super(name, id);

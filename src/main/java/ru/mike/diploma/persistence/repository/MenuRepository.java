@@ -17,7 +17,8 @@ public interface MenuRepository extends JpaRepository<Menu, Integer> {
     List<Menu> getAllMenuByRestaurantId(int restId);
 
     Menu getMenuByIdAndRestaurantId(int menuId, int restId);
-@Transactional
+
+    @Transactional
     int deleteByIdAndRestaurantId(int menuId, int restId);
 
 }

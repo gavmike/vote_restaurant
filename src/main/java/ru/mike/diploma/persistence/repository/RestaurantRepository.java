@@ -11,7 +11,8 @@ import java.util.List;
 @Transactional(readOnly = true)
 public interface RestaurantRepository extends JpaRepository<Restaurant, Integer> {
     List<Restaurant> findAll();
-   @Query("select r from Restaurant r join fetch r.menuList join r.votes")
+
+    @Query("select r from Restaurant r join fetch r.menuList join r.votes")
     public List<Restaurant> getAllWithTodayMenu();
 
 }
