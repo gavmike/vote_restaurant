@@ -41,7 +41,7 @@ public class ProfileVoteControllerTest extends AbstractControllerTest {
     public void createOrUpdate() throws Exception {
         ResultActions resultActions = perform(MockMvcRequestBuilders.post(POST_URL, REST2_ID)
                 .contentType(MediaType.APPLICATION_JSON)
-                .with(userHttpBasic(ADMIN)))
+                .with(userHttpBasic(USER_1)))
                 .andExpect(status().isCreated());
 
         Vote returned = UtilWebTest.readFromJson(resultActions,Vote.class);

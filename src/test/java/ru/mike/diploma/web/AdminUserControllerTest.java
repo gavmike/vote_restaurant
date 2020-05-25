@@ -27,7 +27,7 @@ public class AdminUserControllerTest extends AbstractControllerTest {
     @Test
     public void get() throws Exception {
         perform(MockMvcRequestBuilders.get(URL + USER_1_ID)
-                .with(userHttpBasic(USER_1)))
+                .with(userHttpBasic(ADMIN)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
